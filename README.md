@@ -4,6 +4,7 @@ ACJA Website Viewer acts as a portal that opens up websites in kiosk mode so tha
 
 This project is also sort of a showcase as to the kind of GUI/UX that can be made in an engine like Godot. It was a fun project to work on.
 
+
 **Additional Tools Needed for best functionality:**
 - Chrome - (In the future MS Edge may be supported as well).
 - [smartKey Shortcuts](https://chrome.google.com/webstore/detail/smartkey-shortcuts/aogbgmnbacmlobiajlmjhmbecjohglnl) - (chrome extension to make keyboard shortcuts exit kiosk mode and block other shortcuts.)

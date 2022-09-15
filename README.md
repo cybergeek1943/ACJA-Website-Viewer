@@ -1,5 +1,6 @@
 ![GitHub Workflow Status](https://raw.githubusercontent.com/cybergeek1943/badges/main/build-passing.svg)
-&emsp;
+
+
 To download the executable [click here](https://github.com/cybergeek1943/ACJA-Website-Viewer/releases/download/v3.22/ACJA-Website-Viewer.exe).
 
 &emsp;

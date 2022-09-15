@@ -6,6 +6,8 @@ This project is also sort of a showcase as to the kind of GUI/UX that can be mad
 
 &emsp;
 
+To download the executable [click here](https://github.com/cybergeek1943/ACJA-Website-Viewer/releases/download/v3.22/ACJA-Website-Viewer.exe).
+
 **Additional Tools Needed for best functionality:**
 - Chrome - (In the future MS Edge may be supported as well).
 - [smartKey Shortcuts](https://chrome.google.com/webstore/detail/smartkey-shortcuts/aogbgmnbacmlobiajlmjhmbecjohglnl) - (chrome extension to make keyboard shortcuts exit kiosk mode and block other shortcuts.)

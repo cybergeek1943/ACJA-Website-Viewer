@@ -1,0 +1,221 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://ui/fonts/seguihis.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/icons/application_icon.png" type="Texture" id=2]
+[ext_resource path="res://windows/setup/setup.gd" type="Script" id=3]
+[ext_resource path="res://ui/icons/buttons/Finish.png" type="Texture" id=4]
+[ext_resource path="res://ui/icons/display/third_page.png" type="Texture" id=5]
+[ext_resource path="res://ui/icons/buttons/Pressed/finish.png" type="Texture" id=6]
+[ext_resource path="res://Windows/cbar.gd" type="Script" id=11]
+[ext_resource path="res://ui/fonts/Arial.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 64, -0.25, 0, 0.25, 0, 32, -0.25, 0, 0.25, 0, 64, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 360, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.2, 0.8 )
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "page_indicator"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 552, -0.25, 0, 0.25, 0, 544, -0.25, 0, 0.25, 0, 552, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[sub_resource type="DynamicFont" id=5]
+use_filter = true
+font_data = ExtResource( 12 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="backround" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.997
+margin_bottom = 1.79999
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="create_password" type="Label" parent="backround"]
+margin_left = 320.0
+margin_top = 200.0
+margin_right = 704.0
+margin_bottom = 235.0
+custom_fonts/font = SubResource( 1 )
+text = "Password Recovery"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="TextureRect" parent="."]
+margin_left = 448.0
+margin_top = 64.0
+margin_right = 576.0
+margin_bottom = 192.0
+rect_pivot_offset = Vector2( 64, 64 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="icon"]
+autoplay = "icon"
+anims/icon = SubResource( 2 )
+
+[node name="text_entry_1" type="LineEdit" parent="."]
+margin_left = 320.0
+margin_top = 280.0
+margin_right = 704.0
+margin_bottom = 320.0
+custom_fonts/font = SubResource( 3 )
+max_length = 28
+context_menu_enabled = false
+clear_button_enabled = true
+placeholder_text = "Question"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_entry_2" type="LineEdit" parent="."]
+margin_left = 320.0
+margin_top = 344.0
+margin_right = 704.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 3 )
+max_length = 28
+context_menu_enabled = false
+clear_button_enabled = true
+placeholder_text = "Answer"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next" type="TextureButton" parent="."]
+margin_left = 943.0
+margin_top = 556.0
+margin_right = 1008.0
+margin_bottom = 584.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cancel" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 560.0
+margin_right = 72.0
+margin_bottom = 592.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_hover = Color( 0.105882, 0.45098, 0.909804, 1 )
+text = "Cancel"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="indicator" type="Label" parent="."]
+margin_top = 392.0
+margin_right = 1024.0
+margin_bottom = 408.0
+custom_colors/font_color = Color( 1, 0.270588, 0.270588, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="page_indicator" type="TextureRect" parent="."]
+margin_left = 448.0
+margin_top = 552.0
+margin_right = 576.0
+margin_bottom = 585.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="page_indicator"]
+autoplay = "page_indicator"
+playback_speed = 2.0
+anims/page_indicator = SubResource( 4 )
+
+[node name="cbar" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 32.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="cbar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 998.499
+margin_top = 2.584
+margin_right = -2.50098
+margin_bottom = -4.416
+focus_mode = 0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+text = "X"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="animation_finished" from="icon/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="next" to="." method="_on_question_answer_next_pressed"]
+[connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]
+[connection signal="gui_input" from="cbar" to="cbar" method="_on_cbar_gui_input"]
+[connection signal="pressed" from="cbar/exit" to="cbar" method="_on_exit_pressed"]

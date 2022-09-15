@@ -1,0 +1,179 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://ui/fonts/seguihis.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/icons/application_icon.png" type="Texture" id=2]
+[ext_resource path="res://ui/icons/buttons/Pressed/next.png" type="Texture" id=3]
+[ext_resource path="res://ui/icons/buttons/next.png" type="Texture" id=4]
+[ext_resource path="res://ui/icons/display/description_backround.png" type="Texture" id=5]
+[ext_resource path="res://windows/setup/setup.gd" type="Script" id=6]
+[ext_resource path="res://Windows/cbar.gd" type="Script" id=11]
+[ext_resource path="res://ui/fonts/Arial.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 11
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=3]
+use_filter = true
+font_data = ExtResource( 12 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="backround" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.997
+margin_bottom = 1.79999
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="TextureRect" parent="backround"]
+margin_left = 448.0
+margin_top = 64.0
+margin_right = 576.0
+margin_bottom = 192.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="backround/icon"]
+margin_left = -128.0
+margin_top = 136.0
+margin_right = 256.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 1 )
+text = "Welcome to ACJA Website Viewer"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="notice" type="TextureRect" parent="."]
+margin_left = 320.0
+margin_top = 256.0
+margin_right = 704.0
+margin_bottom = 512.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="RichTextLabel" parent="notice"]
+margin_left = 8.0
+margin_top = 3.0
+margin_right = 376.0
+margin_bottom = 248.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "                                                       Notice
+
+ACJA Website Viewer acts as a web portal, meaning it directs the user to the websites that have been curated and open's them up in a kiosk window. If, at some point, the websites that ACJA Website Viewer has links to - break down or become no longer maintained, the problem is not related to this software. The developer can be contacted, via the information found at (settings/about software) if a website breaks down, the Chrome browser/ad blockers stop working, or an update to the ACJA website viewer is necessary."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next" type="TextureButton" parent="."]
+margin_left = 943.0
+margin_top = 556.0
+margin_right = 1008.0
+margin_bottom = 584.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restore_backup" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 560.0
+margin_right = 107.0
+margin_bottom = 592.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 1, 1, 1, 0.501961 )
+custom_colors/font_color_hover = Color( 0, 0.835294, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Restore Backup"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="file_corrupted" type="AcceptDialog" parent="."]
+margin_left = 400.0
+margin_top = 240.0
+margin_right = 624.0
+margin_bottom = 336.0
+window_title = "Error!"
+dialog_text = "The file you selected has been corrupted or is an invalid file.
+Please select a valid file..."
+dialog_autowrap = true
+
+[node name="FileDialog" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -216.0
+margin_right = 320.0
+margin_bottom = 216.0
+window_title = "Open a File"
+mode = 0
+access = 2
+filters = PoolStringArray( "*.save" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cbar" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 32.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="cbar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 998.499
+margin_top = 2.584
+margin_right = -2.50098
+margin_bottom = -4.416
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "X"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="next" to="." method="_on_welcome_next_pressed"]
+[connection signal="pressed" from="restore_backup" to="." method="_on_restore_backup_pressed"]
+[connection signal="confirmed" from="file_corrupted" to="." method="_on_file_corrupted_confirmed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="gui_input" from="cbar" to="cbar" method="_on_cbar_gui_input"]
+[connection signal="pressed" from="cbar/exit" to="cbar" method="_on_exit_pressed"]

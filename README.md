@@ -1,12 +1,13 @@
 ![GitHub Workflow Status](https://raw.githubusercontent.com/cybergeek1943/badges/main/build-passing.svg)
+To download the executable [click here](https://github.com/cybergeek1943/ACJA-Website-Viewer/releases/download/v3.22/ACJA-Website-Viewer.exe).
+
+&emsp;
 
 ACJA Website Viewer acts as a portal that opens up websites in kiosk mode so that the user does not have access to the URL bar or any other buttons. This was a small project I developed for a small local private school nearby.
 
 This project is also sort of a showcase as to the kind of GUI/UX that can be made in an engine like Godot. It was a fun project to work on.
 
 &emsp;
-
-To download the executable [click here](https://github.com/cybergeek1943/ACJA-Website-Viewer/releases/download/v3.22/ACJA-Website-Viewer.exe).
 
 **Additional Tools Needed for best functionality:**
 - Chrome - (In the future MS Edge may be supported as well).

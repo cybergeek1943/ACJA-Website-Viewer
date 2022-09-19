@@ -16,6 +16,6 @@ This project is also sort of a showcase as to the kind of GUI/UX that can be mad
 - [smartKey Shortcuts](https://chrome.google.com/webstore/detail/smartkey-shortcuts/aogbgmnbacmlobiajlmjhmbecjohglnl) - (chrome extension to make keyboard shortcuts exit kiosk mode and block other shortcuts.)
 - [AdBlock](https://chrome.google.com/webstore/detail/adblock-%E2%80%94-best-ad-blocker/gighmmpiobklfepjocnamgkkbiglidom?hl=en) - (chrome extension to block adds.)
 - [Alternate Navigation Buttons](https://chrome.google.com/webstore/detail/alternate-navigation-butt/biojkleepjmhindklmdcomngjkcngjmb/related?hl=en-US) - (chrome extension that adds simple navigation buttons to go forward or backward.)
-- You may also want to disable many keyboard shortcuts such as ctrl+n, win+r, or win+ctrl+esc... as well as remove access to browsers from the start menu. 
+- You may also want to disable many keyboard shortcuts such as ctr+shift+esc, ctrl+n, win+r, or ctrl+alt+esc... as well as remove access to browsers from the start menu. 
 
 There are may shortcomings of this program when it is run all by itself. In the future ACJA Website Viewer may be made kiosk itself and much more "kiosk" secure.

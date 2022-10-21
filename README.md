@@ -3,7 +3,7 @@
 
 To download the executable [click here](https://github.com/cybergeek1943/ACJA-Website-Viewer/releases/download/v3.22/ACJA-Website-Viewer.exe).
 
-Note - the core functionality of this really only works on windows since it uses cmd and powershell.
+Note - the core functionality of this really only works on Windows OS since it uses CMD and PowerShell.
 
 &emsp;
 

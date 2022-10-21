@@ -3,6 +3,8 @@
 
 To download the executable [click here](https://github.com/cybergeek1943/ACJA-Website-Viewer/releases/download/v3.22/ACJA-Website-Viewer.exe).
 
+Note - the core functionality of this really only works on windows since it uses cmd and powershell.
+
 &emsp;
 
 ACJA Website Viewer acts as a portal that opens up websites in kiosk mode so that the user does not have access to the URL bar or any other buttons. This was a small project I developed for a small local private school nearby.

@@ -1,1 +1,0 @@
-This folder is only for button/interactive/clickable icons. For non-clickable graphics see the graphics folder.

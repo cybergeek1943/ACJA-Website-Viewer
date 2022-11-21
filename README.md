@@ -1,7 +1,7 @@
 ![GitHub Workflow Status](https://raw.githubusercontent.com/cybergeek1943/badges/main/build-passing.svg)
 
 
-To download the executable [click here](https://github.com/cybergeek1943/ACJA-Website-Viewer/releases/download/v3.22/ACJA-Website-Viewer.exe).
+To download the executable [click here](https://github.com/cybergeek1943/Asphaleia-Browser/releases/download/v4.22/Asphaleia_Browser.exe).
 
 Note - the core functionality of this really only works on Windows OS since it uses CMD and PowerShell.
 

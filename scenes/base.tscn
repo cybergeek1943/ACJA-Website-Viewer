@@ -1,0 +1,1299 @@
+[gd_scene load_steps=78 format=2]
+
+[ext_resource path="res://scenes/cbar.gd" type="Script" id=1]
+[ext_resource path="res://scenes/base.gd" type="Script" id=2]
+[ext_resource path="res://ui/fonts/3D Drawn.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://ui/fonts/Arial.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://ui/icons/buttons/base/Fun_Educational_Websites.png" type="Texture" id=5]
+[ext_resource path="res://ui/icons/buttons/base/google.png" type="Texture" id=6]
+[ext_resource path="res://ui/icons/buttons/base/encyclopedia.png" type="Texture" id=7]
+[ext_resource path="res://ui/icons/buttons/base/national_geographic.png" type="Texture" id=8]
+[ext_resource path="res://ui/icons/buttons/base/typing.png" type="Texture" id=9]
+[ext_resource path="res://ui/icons/buttons/base/settings.png" type="Texture" id=10]
+[ext_resource path="res://ui/icons/buttons/base/khan_academy.png" type="Texture" id=11]
+[ext_resource path="res://ui/icons/buttons/base/hover/settings.png" type="Texture" id=12]
+[ext_resource path="res://ui/icons/buttons/base/hover/google.png" type="Texture" id=13]
+[ext_resource path="res://ui/icons/buttons/base/browser.png" type="Texture" id=14]
+[ext_resource path="res://ui/icons/buttons/base/fun_brain.png" type="Texture" id=15]
+
+[sub_resource type="DynamicFont" id=58]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "bottom_left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 336 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "bottom_right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608, 336 ) ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "button_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "center"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 448, 208 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "middle_center_left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 352, 208 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "middle_center_right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 544, 208 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, 208 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 208 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 80 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608, 80 ) ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "bottom_left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 336 ) ]
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "bottom_right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608, 336 ) ]
+}
+
+[sub_resource type="Animation" id=64]
+resource_name = "button_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "center"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 448, 208 ) ]
+}
+
+[sub_resource type="Animation" id=66]
+resource_name = "middle_center_left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 352, 208 ) ]
+}
+
+[sub_resource type="Animation" id=67]
+resource_name = "middle_center_right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 544, 208 ) ]
+}
+
+[sub_resource type="Animation" id=68]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, 208 ) ]
+}
+
+[sub_resource type="Animation" id=69]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 208 ) ]
+}
+
+[sub_resource type="Animation" id=70]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 80 ) ]
+}
+
+[sub_resource type="Animation" id=71]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608, 80 ) ]
+}
+
+[sub_resource type="Animation" id=72]
+resource_name = "bottom_left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 336 ) ]
+}
+
+[sub_resource type="Animation" id=73]
+resource_name = "bottom_right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608, 336 ) ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "button_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
+
+[sub_resource type="Animation" id=75]
+resource_name = "center"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 448, 208 ) ]
+}
+
+[sub_resource type="Animation" id=76]
+resource_name = "middle_center_left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 352, 208 ) ]
+}
+
+[sub_resource type="Animation" id=77]
+resource_name = "middle_center_right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 544, 208 ) ]
+}
+
+[sub_resource type="Animation" id=78]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, 208 ) ]
+}
+
+[sub_resource type="Animation" id=79]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 208 ) ]
+}
+
+[sub_resource type="Animation" id=80]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 80 ) ]
+}
+
+[sub_resource type="Animation" id=81]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608, 80 ) ]
+}
+
+[sub_resource type="Animation" id=82]
+resource_name = "bottom_left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 336 ) ]
+}
+
+[sub_resource type="Animation" id=83]
+resource_name = "bottom_right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608, 336 ) ]
+}
+
+[sub_resource type="Animation" id=84]
+resource_name = "button_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
+
+[sub_resource type="Animation" id=85]
+resource_name = "center"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 448, 208 ) ]
+}
+
+[sub_resource type="Animation" id=86]
+resource_name = "middle_center_left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 352, 208 ) ]
+}
+
+[sub_resource type="Animation" id=87]
+resource_name = "middle_center_right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 544, 208 ) ]
+}
+
+[sub_resource type="Animation" id=88]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, 208 ) ]
+}
+
+[sub_resource type="Animation" id=89]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 208 ) ]
+}
+
+[sub_resource type="Animation" id=90]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 80 ) ]
+}
+
+[sub_resource type="Animation" id=91]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608, 80 ) ]
+}
+
+[sub_resource type="Animation" id=92]
+resource_name = "bottom_left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 336 ) ]
+}
+
+[sub_resource type="Animation" id=93]
+resource_name = "bottom_right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608, 336 ) ]
+}
+
+[sub_resource type="Animation" id=94]
+resource_name = "button_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
+
+[sub_resource type="Animation" id=95]
+resource_name = "center"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 448, 208 ) ]
+}
+
+[sub_resource type="Animation" id=96]
+resource_name = "middle_center_left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 352, 208 ) ]
+}
+
+[sub_resource type="Animation" id=97]
+resource_name = "middle_center_right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 544, 208 ) ]
+}
+
+[sub_resource type="Animation" id=98]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, 208 ) ]
+}
+
+[sub_resource type="Animation" id=99]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 208 ) ]
+}
+
+[sub_resource type="Animation" id=100]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 80 ) ]
+}
+
+[sub_resource type="Animation" id=101]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 608, 80 ) ]
+}
+
+[sub_resource type="Animation" id=102]
+resource_name = "button_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "center"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1472, 208 ) ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1376, 208 ) ]
+}
+
+[sub_resource type="Animation" id=103]
+resource_name = "button_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
+
+[sub_resource type="Animation" id=54]
+resource_name = "center"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1472, 208 ) ]
+}
+
+[sub_resource type="Animation" id=55]
+resource_name = "right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1568, 208 ) ]
+}
+
+[sub_resource type="Animation" id=56]
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 1.48988, -91.2009, -1024, -1.55128, 85.4131, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+
+[sub_resource type="Animation" id=107]
+resource_name = "startup"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.24, -0.25, 0, 0.1, 0.787057, 1, -0.5, -0.0724908, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="Animation" id=57]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 8, 608 ), Vector2( 8, 572 ) ]
+}
+
+[sub_resource type="Animation" id=105]
+resource_name = "added"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 600, -0.25, 0, 0.25, 0, 568, -0.2, -15.3071, 0.249924, 19.1281 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+
+[sub_resource type="DynamicFont" id=59]
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="backround" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.997
+margin_bottom = 1.79999
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+
+[node name="acja_website_viewer_label" type="Label" parent="backround"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 424.0
+margin_top = 16.0
+margin_right = -424.0
+margin_bottom = -566.0
+custom_fonts/font = SubResource( 58 )
+text = "ASPHALEIA BROWSER"
+align = 1
+valign = 1
+
+[node name="pages" type="Control" parent="."]
+margin_top = 48.0
+margin_right = 2048.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 512, 276 )
+
+[node name="browser" type="Button" parent="pages"]
+anchor_top = -0.087
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 288.0
+margin_top = 128.024
+margin_right = -1632.0
+margin_bottom = -344.0
+rect_pivot_offset = Vector2( 64, 64 )
+focus_mode = 0
+icon = ExtResource( 14 )
+flat = true
+expand_icon = true
+script = ExtResource( 2 )
+
+[node name="button_anim_loc" type="AnimationPlayer" parent="pages/browser"]
+reset_on_save = false
+anims/bottom_left = SubResource( 1 )
+anims/bottom_right = SubResource( 2 )
+anims/button_animation = SubResource( 61 )
+anims/center = SubResource( 3 )
+anims/middle_center_left = SubResource( 4 )
+anims/middle_center_right = SubResource( 5 )
+anims/middle_left = SubResource( 6 )
+anims/middle_right = SubResource( 7 )
+anims/top_left = SubResource( 8 )
+anims/top_right = SubResource( 9 )
+
+[node name="encyclopedia" type="Button" parent="pages"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 608.0
+margin_top = 80.0
+margin_right = -1312.0
+margin_bottom = -344.0
+rect_pivot_offset = Vector2( 64, 64 )
+focus_mode = 0
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+script = ExtResource( 2 )
+
+[node name="button_anim_loc" type="AnimationPlayer" parent="pages/encyclopedia"]
+reset_on_save = false
+anims/bottom_left = SubResource( 62 )
+anims/bottom_right = SubResource( 63 )
+anims/button_animation = SubResource( 64 )
+anims/center = SubResource( 65 )
+anims/middle_center_left = SubResource( 66 )
+anims/middle_center_right = SubResource( 67 )
+anims/middle_left = SubResource( 68 )
+anims/middle_right = SubResource( 69 )
+anims/top_left = SubResource( 70 )
+anims/top_right = SubResource( 71 )
+
+[node name="khan_academy" type="Button" parent="pages"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 448.0
+margin_top = 208.0
+margin_right = -1472.0
+margin_bottom = -216.0
+rect_pivot_offset = Vector2( 64, 64 )
+focus_mode = 0
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+script = ExtResource( 2 )
+
+[node name="button_anim_loc" type="AnimationPlayer" parent="pages/khan_academy"]
+reset_on_save = false
+anims/bottom_left = SubResource( 72 )
+anims/bottom_right = SubResource( 73 )
+anims/button_animation = SubResource( 74 )
+anims/center = SubResource( 75 )
+anims/middle_center_left = SubResource( 76 )
+anims/middle_center_right = SubResource( 77 )
+anims/middle_left = SubResource( 78 )
+anims/middle_right = SubResource( 79 )
+anims/top_left = SubResource( 80 )
+anims/top_right = SubResource( 81 )
+
+[node name="typing" type="Button" parent="pages"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 288.0
+margin_top = 336.0
+margin_right = -1632.0
+margin_bottom = -88.0
+rect_pivot_offset = Vector2( 64, 64 )
+focus_mode = 0
+icon = ExtResource( 9 )
+flat = true
+expand_icon = true
+script = ExtResource( 2 )
+
+[node name="button_anim_loc" type="AnimationPlayer" parent="pages/typing"]
+reset_on_save = false
+anims/bottom_left = SubResource( 82 )
+anims/bottom_right = SubResource( 83 )
+anims/button_animation = SubResource( 84 )
+anims/center = SubResource( 85 )
+anims/middle_center_left = SubResource( 86 )
+anims/middle_center_right = SubResource( 87 )
+anims/middle_left = SubResource( 88 )
+anims/middle_right = SubResource( 89 )
+anims/top_left = SubResource( 90 )
+anims/top_right = SubResource( 91 )
+
+[node name="fun_educational_websites" type="Button" parent="pages"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 608.0
+margin_top = 336.0
+margin_right = -1312.0
+margin_bottom = -88.0
+rect_pivot_offset = Vector2( 64, 64 )
+focus_mode = 0
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
+script = ExtResource( 2 )
+
+[node name="button_anim_loc" type="AnimationPlayer" parent="pages/fun_educational_websites"]
+reset_on_save = false
+anims/bottom_left = SubResource( 92 )
+anims/bottom_right = SubResource( 93 )
+anims/button_animation = SubResource( 94 )
+anims/center = SubResource( 95 )
+anims/middle_center_left = SubResource( 96 )
+anims/middle_center_right = SubResource( 97 )
+anims/middle_left = SubResource( 98 )
+anims/middle_right = SubResource( 99 )
+anims/top_left = SubResource( 100 )
+anims/top_right = SubResource( 101 )
+
+[node name="national_geographic" type="Button" parent="pages"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1376.0
+margin_top = 208.0
+margin_right = -544.0
+margin_bottom = -216.0
+rect_pivot_offset = Vector2( 64, 64 )
+focus_mode = 0
+icon = ExtResource( 8 )
+flat = true
+expand_icon = true
+script = ExtResource( 2 )
+
+[node name="button_anim_loc" type="AnimationPlayer" parent="pages/national_geographic"]
+anims/button_animation = SubResource( 102 )
+anims/center = SubResource( 51 )
+anims/left = SubResource( 52 )
+
+[node name="fun_brain" type="Button" parent="pages"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1568.0
+margin_top = 208.0
+margin_right = -352.0
+margin_bottom = -216.0
+rect_pivot_offset = Vector2( 64, 64 )
+focus_mode = 0
+icon = ExtResource( 15 )
+flat = true
+expand_icon = true
+script = ExtResource( 2 )
+
+[node name="button_anim_loc" type="AnimationPlayer" parent="pages/fun_brain"]
+anims/button_animation = SubResource( 103 )
+anims/center = SubResource( 54 )
+anims/right = SubResource( 55 )
+
+[node name="page_change" type="AnimationPlayer" parent="pages"]
+autoplay = "startup"
+playback_speed = 4.0
+anims/fun_educational_websites = SubResource( 56 )
+anims/startup = SubResource( 107 )
+
+[node name="back" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 608.0
+margin_right = 50.0
+margin_bottom = 628.0
+rect_pivot_offset = Vector2( -216, -448 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_hover = Color( 0, 0.486275, 1, 1 )
+text = "Back"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="back"]
+anims/back = SubResource( 57 )
+
+[node name="added_websites" type="Control" parent="."]
+visible = false
+margin_left = 832.0
+margin_top = 288.0
+margin_right = 1008.0
+margin_bottom = 560.0
+
+[node name="close" type="Button" parent="added_websites"]
+margin_top = -24.0
+margin_right = 47.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( -216, -448 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 1, 0.258824, 0.258824, 1 )
+custom_colors/font_color_hover = Color( 1, 0.709804, 0.709804, 1 )
+text = "Close"
+flat = true
+
+[node name="added_websites" type="ItemList" parent="added_websites"]
+margin_right = 176.0
+margin_bottom = 272.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="added" type="Button" parent="."]
+margin_left = 960.0
+margin_top = 600.0
+margin_right = 1016.0
+margin_bottom = 624.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 1, 1, 1, 0.392157 )
+custom_colors/font_color_hover = Color( 0, 0.486275, 1, 1 )
+text = "Added"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="added"]
+anims/added = SubResource( 105 )
+
+[node name="cbar" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 32.0
+script = ExtResource( 1 )
+
+[node name="exit" type="Button" parent="cbar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 998.499
+margin_top = 2.584
+margin_right = -2.50098
+margin_bottom = -4.416
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 59 )
+text = "X"
+flat = true
+
+[node name="settings" type="TextureButton" parent="cbar"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 38.0
+margin_bottom = 38.0
+hint_tooltip = "Settings for Teachers"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="google" type="TextureButton" parent="cbar"]
+margin_left = 48.0
+margin_top = 8.0
+margin_right = 78.0
+margin_bottom = 38.0
+hint_tooltip = "Google for Teachers"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="ready" from="pages" to="." method="_arrange_buttons_initiated"]
+[connection signal="mouse_entered" from="pages/browser" to="pages/browser" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="pages/browser" to="pages/browser" method="_on_mouse_exited"]
+[connection signal="pressed" from="pages/browser" to="." method="_on_browser_pressed"]
+[connection signal="mouse_entered" from="pages/encyclopedia" to="pages/encyclopedia" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="pages/encyclopedia" to="pages/encyclopedia" method="_on_mouse_exited"]
+[connection signal="pressed" from="pages/encyclopedia" to="." method="_on_encyclopedia_pressed"]
+[connection signal="mouse_entered" from="pages/khan_academy" to="pages/khan_academy" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="pages/khan_academy" to="pages/khan_academy" method="_on_mouse_exited"]
+[connection signal="pressed" from="pages/khan_academy" to="." method="_on_khan_academy_pressed"]
+[connection signal="mouse_entered" from="pages/typing" to="pages/typing" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="pages/typing" to="pages/typing" method="_on_mouse_exited"]
+[connection signal="pressed" from="pages/typing" to="." method="_on_typing_pressed"]
+[connection signal="mouse_entered" from="pages/fun_educational_websites" to="pages/fun_educational_websites" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="pages/fun_educational_websites" to="pages/fun_educational_websites" method="_on_mouse_exited"]
+[connection signal="pressed" from="pages/fun_educational_websites" to="." method="_on_fun_educational_websites_pressed"]
+[connection signal="mouse_entered" from="pages/national_geographic" to="pages/national_geographic" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="pages/national_geographic" to="pages/national_geographic" method="_on_mouse_exited"]
+[connection signal="pressed" from="pages/national_geographic" to="." method="_on_national_geographics_pressed"]
+[connection signal="mouse_entered" from="pages/fun_brain" to="pages/fun_brain" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="pages/fun_brain" to="pages/fun_brain" method="_on_mouse_exited"]
+[connection signal="pressed" from="pages/fun_brain" to="." method="_on_fun_brain_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="added_websites/close" to="." method="_on_added_close_pressed"]
+[connection signal="item_activated" from="added_websites/added_websites" to="." method="_on_added_websites_item_activated"]
+[connection signal="nothing_selected" from="added_websites/added_websites" to="." method="_on_added_websites_nothing_selected"]
+[connection signal="ready" from="added_websites/added_websites" to="." method="_on_added_websites_ready"]
+[connection signal="pressed" from="added" to="." method="_on_added_close_pressed"]
+[connection signal="gui_input" from="cbar" to="cbar" method="_on_cbar_gui_input"]
+[connection signal="pressed" from="cbar/exit" to="cbar" method="_on_exit_pressed"]
+[connection signal="pressed" from="cbar/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="cbar/google" to="." method="_on_google_pressed"]

@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.172549, 0.164706, 0.196078, 1 )
+border_width_left = 8
+border_color = Color( 0.172549, 0.164706, 0.196078, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.211765, 0.203922, 0.235294, 1 )
+border_width_left = 8
+border_color = Color( 0.211765, 0.203922, 0.235294, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.207843, 0.596078, 0.858824, 0.341176 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.172549, 0.164706, 0.196078, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.290196, 0.290196, 0.290196, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+OptionButton/styles/focus = SubResource( 20 )
+OptionButton/styles/hover = SubResource( 21 )
+OptionButton/styles/normal = SubResource( 20 )
+OptionButton/styles/pressed = SubResource( 21 )
+PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
+PopupMenu/styles/hover = SubResource( 22 )
+PopupMenu/styles/panel = SubResource( 23 )

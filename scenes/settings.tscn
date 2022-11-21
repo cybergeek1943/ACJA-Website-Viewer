@@ -1,0 +1,2056 @@
+[gd_scene load_steps=65 format=2]
+
+[ext_resource path="res://scenes/cbar.gd" type="Script" id=1]
+[ext_resource path="res://ui/fonts/Arial.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/settings.gd" type="Script" id=3]
+[ext_resource path="res://ui/graphics/settings.png" type="Texture" id=4]
+[ext_resource path="res://ui/icons/buttons/base/browser.png" type="Texture" id=5]
+[ext_resource path="res://ui/icons/buttons/base/encyclopedia.png" type="Texture" id=6]
+[ext_resource path="res://ui/icons/buttons/base/khan_academy.png" type="Texture" id=7]
+[ext_resource path="res://ui/icons/buttons/base/typing.png" type="Texture" id=8]
+[ext_resource path="res://ui/icons/buttons/base/fun_brain.png" type="Texture" id=9]
+[ext_resource path="res://ui/icons/buttons/base/national_geographic.png" type="Texture" id=10]
+[ext_resource path="res://ui/icons/buttons/base/Fun_Educational_Websites.png" type="Texture" id=11]
+[ext_resource path="res://ui/graphics/settings/box.png" type="Texture" id=12]
+[ext_resource path="res://ui/icons/buttons/settings/tabs/hide.png" type="Texture" id=13]
+[ext_resource path="res://ui/graphics/settings/button_indicator.png" type="Texture" id=15]
+[ext_resource path="res://ui/icons/buttons/settings/add/delete.png" type="Texture" id=16]
+[ext_resource path="res://ui/icons/buttons/settings/tabs/add.png" type="Texture" id=17]
+[ext_resource path="res://ui/icons/buttons/settings/add/edit.png" type="Texture" id=18]
+[ext_resource path="res://ui/icons/buttons/settings/add/test.png" type="Texture" id=19]
+[ext_resource path="res://ui/icons/buttons/settings/tabs/transfer.png" type="Texture" id=20]
+[ext_resource path="res://ui/themes/text_entry_border.tres" type="Theme" id=21]
+[ext_resource path="res://ui/themes/option_button.tres" type="Theme" id=22]
+[ext_resource path="res://ui/themes/default_button.tres" type="Theme" id=23]
+[ext_resource path="res://ui/themes/settings_menu_buttons.tres" type="Theme" id=24]
+[ext_resource path="res://ui/icons/buttons/settings/tabs/account.png" type="Texture" id=25]
+[ext_resource path="res://ui/icons/buttons/settings/add/add.png" type="Texture" id=26]
+[ext_resource path="res://ui/icons/buttons/settings/tabs/restrict.png" type="Texture" id=27]
+[ext_resource path="res://ui/icons/buttons/settings/tabs/reset.png" type="Texture" id=29]
+[ext_resource path="res://ui/icons/buttons/settings/tabs/about.png" type="Texture" id=30]
+[ext_resource path="res://ui/themes/text_entry.tres" type="Theme" id=31]
+[ext_resource path="res://ui/themes/window_dialog.tres" type="Theme" id=32]
+[ext_resource path="res://ui/themes/tooltip.tres" type="Theme" id=33]
+
+[sub_resource type="Animation" id=2892]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 360, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2893]
+resource_name = "opening_animation"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.9, -4.268, 360, -0.7, 0.339996, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=1499]
+resource_name = "about"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 216 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1500]
+resource_name = "account_information"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2205]
+resource_name = "add_websites"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 108 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1501]
+resource_name = "hide_websites"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 72 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1503]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 180 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1504]
+resource_name = "restrict_websites"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 36 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1505]
+resource_name = "transfer_account"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 144 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1506]
+size = 18
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=5645]
+bg_color = Color( 0.6, 0.6, 0.6, 0.392157 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="DynamicFont" id=1507]
+size = 20
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1508]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=3584]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 464, 32 ), Vector2( 392, 32 ) ]
+}
+
+[sub_resource type="Animation" id=4270]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 464, 32 ), Vector2( 392, 32 ) ]
+}
+
+[sub_resource type="Animation" id=4956]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 272, 32 ), Vector2( 200, 32 ) ]
+}
+
+[sub_resource type="Animation" id=5642]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 464, 32 ), Vector2( 392, 32 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1509]
+size = 12
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=5646]
+bg_color = Color( 0.113725, 0.113725, 0.113725, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id=5647]
+bg_color = Color( 0.113725, 0.113725, 0.113725, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=5648]
+bg_color = Color( 0.266667, 0.266667, 0.266667, 1 )
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="DynamicFont" id=1510]
+size = 15
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1511]
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=1512]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, -3600 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.2, 0.285044, 1, -0.2, 0.157051, 0.1, -0.00165427 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="Animation" id=1513]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, 0 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.2, 0.285044, 1, -0.2, 0.157051, 0.1, -0.00165427 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="Animation" id=2891]
+resource_name = "add_websites"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, -1800 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.2, 0.285044, 1, -0.2, 0.157051, 0.1, -0.00165427 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="Animation" id=1514]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, -4200 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.2, 0.285044, 1, -0.2, 0.157051, 0.1, -0.00165427 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="Animation" id=1515]
+resource_name = "hide_websites"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, -1200 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.2, 0.285044, 1, -0.2, 0.157051, 0.1, -0.00165427 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="Animation" id=1516]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, -3000 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.2, 0.285044, 1, -0.2, 0.157051, 0.1, -0.00165427 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="Animation" id=1517]
+resource_name = "restrict_websites"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, -600 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.2, 0.285044, 1, -0.2, 0.157051, 0.1, -0.00165427 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="Animation" id=1518]
+resource_name = "transfer_account"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, -2400 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.2, 0.285044, 1, -0.2, 0.157051, 0.1, -0.00165427 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="DynamicFont" id=1519]
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="backround" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.997
+margin_bottom = 1.79999
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+
+[node name="side_bar" type="ColorRect" parent="backround"]
+margin_right = 256.0
+margin_bottom = 600.0
+color = Color( 0.176471, 0.176471, 0.176471, 1 )
+
+[node name="settting_icon" type="TextureRect" parent="backround/side_bar"]
+margin_left = 72.0
+margin_top = 24.0
+margin_right = 184.0
+margin_bottom = 136.0
+rect_rotation = 360.0
+rect_pivot_offset = Vector2( 56, 56 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="backround/side_bar/settting_icon"]
+autoplay = "opening_animation"
+anims/RESET = SubResource( 2892 )
+anims/opening_animation = SubResource( 2893 )
+
+[node name="settings_label" type="Label" parent="backround/side_bar"]
+anchor_left = -0.643
+anchor_top = -0.191
+anchor_right = -0.643
+anchor_bottom = -0.191
+margin_left = 236.608
+margin_top = 258.6
+margin_right = 348.608
+margin_bottom = 293.6
+custom_fonts/font = SubResource( 1 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="indicator" type="Label" parent="backround"]
+margin_left = 256.0
+margin_top = 576.0
+margin_right = 1022.0
+margin_bottom = 590.0
+custom_colors/font_color = Color( 1, 0.270588, 0.270588, 1 )
+align = 1
+valign = 1
+
+[node name="timer" type="Timer" parent="backround/indicator"]
+
+[node name="menu_buttons" type="Control" parent="."]
+margin_top = 200.0
+margin_right = 256.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, -200 )
+
+[node name="account_information" type="Button" parent="menu_buttons"]
+margin_left = 8.0
+margin_right = 248.0
+margin_bottom = 32.0
+focus_mode = 0
+theme = ExtResource( 24 )
+text = " Account"
+icon = ExtResource( 25 )
+align = 0
+
+[node name="restrict_websites" type="Button" parent="menu_buttons"]
+margin_left = 8.0
+margin_top = 36.0
+margin_right = 248.0
+margin_bottom = 68.0
+focus_mode = 0
+theme = ExtResource( 24 )
+text = " Restrict Websites"
+icon = ExtResource( 27 )
+align = 0
+
+[node name="hide_websites" type="Button" parent="menu_buttons"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 248.0
+margin_bottom = 104.0
+focus_mode = 0
+theme = ExtResource( 24 )
+text = " Hide Websites"
+icon = ExtResource( 13 )
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="add_websites" type="Button" parent="menu_buttons"]
+margin_left = 8.0
+margin_top = 108.0
+margin_right = 248.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, -296 )
+focus_mode = 0
+theme = ExtResource( 24 )
+text = " Add Websites"
+icon = ExtResource( 17 )
+align = 0
+
+[node name="transfer_account" type="Button" parent="menu_buttons"]
+margin_left = 8.0
+margin_top = 144.0
+margin_right = 248.0
+margin_bottom = 176.0
+rect_pivot_offset = Vector2( 0, -296 )
+focus_mode = 0
+theme = ExtResource( 24 )
+text = " Transfer Account"
+icon = ExtResource( 20 )
+align = 0
+
+[node name="reset_uninstall" type="Button" parent="menu_buttons"]
+margin_left = 8.0
+margin_top = 180.0
+margin_right = 248.0
+margin_bottom = 212.0
+focus_mode = 0
+theme = ExtResource( 24 )
+text = " Reset & Uninstall"
+icon = ExtResource( 29 )
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about" type="Button" parent="menu_buttons"]
+margin_left = 8.0
+margin_top = 216.0
+margin_right = 248.0
+margin_bottom = 248.0
+focus_mode = 0
+theme = ExtResource( 24 )
+text = " About / Contact"
+icon = ExtResource( 30 )
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="menu_buttons"]
+margin_left = 8.0
+margin_top = 372.0
+margin_right = 62.0
+margin_bottom = 392.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_hover = Color( 0, 0.552941, 1, 1 )
+text = "< Back"
+flat = true
+
+[node name="button_indicator" type="TextureRect" parent="menu_buttons"]
+margin_left = 2.0
+margin_right = 18.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+texture = ExtResource( 15 )
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="menu_buttons/button_indicator"]
+autoplay = "account_information"
+anims/about = SubResource( 1499 )
+anims/account_information = SubResource( 1500 )
+anims/add_websites = SubResource( 2205 )
+anims/hide_websites = SubResource( 1501 )
+anims/reset_uninstall = SubResource( 1503 )
+anims/restrict_websites = SubResource( 1504 )
+anims/transfer_account = SubResource( 1505 )
+
+[node name="sub_window" type="Control" parent="."]
+margin_left = 256.0
+margin_right = 1024.0
+margin_bottom = 3600.0
+rect_pivot_offset = Vector2( 384, 1800 )
+
+[node name="account_information" type="Control" parent="sub_window"]
+margin_right = 766.0
+margin_bottom = 600.0
+
+[node name="account_information_label" type="Label" parent="sub_window/account_information"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 73.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1506 )
+text = "Account Information"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="seperator_1" type="Panel" parent="sub_window/account_information/account_information_label"]
+margin_left = 56.0
+margin_top = 56.0
+margin_right = 696.0
+margin_bottom = 61.0
+custom_styles/panel = SubResource( 5645 )
+
+[node name="la_info" type="Label" parent="sub_window/account_information/account_information_label/seperator_1"]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 97.0
+margin_bottom = 30.0
+text = "Local Account"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="seperator_2" type="Panel" parent="sub_window/account_information/account_information_label"]
+margin_left = 56.0
+margin_top = 312.0
+margin_right = 696.0
+margin_bottom = 317.0
+custom_styles/panel = SubResource( 5645 )
+
+[node name="p_recovery" type="Label" parent="sub_window/account_information/account_information_label/seperator_2"]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 130.0
+margin_bottom = 30.0
+text = "Password Recovery"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="LineEdit" parent="sub_window/account_information"]
+margin_left = 176.0
+margin_top = 112.0
+margin_right = 640.0
+margin_bottom = 144.0
+theme = ExtResource( 31 )
+custom_fonts/font = SubResource( 1507 )
+max_length = 80
+context_menu_enabled = false
+clear_button_enabled = true
+caret_blink = true
+
+[node name="name_label" type="Label" parent="sub_window/account_information/name"]
+margin_left = -112.0
+margin_right = -8.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1508 )
+text = "Name"
+align = 2
+valign = 1
+
+[node name="name_confirm" type="Button" parent="sub_window/account_information/name"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 400.0
+margin_right = 464.0
+margin_bottom = 32.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Confirm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sub_window/account_information/name/name_confirm"]
+anims/fade = SubResource( 3584 )
+
+[node name="email" type="LineEdit" parent="sub_window/account_information"]
+margin_left = 176.0
+margin_top = 176.0
+margin_right = 640.0
+margin_bottom = 208.0
+theme = ExtResource( 31 )
+custom_fonts/font = SubResource( 1507 )
+max_length = 80
+context_menu_enabled = false
+clear_button_enabled = true
+caret_blink = true
+
+[node name="email_label" type="Label" parent="sub_window/account_information/email"]
+margin_left = -112.0
+margin_right = -8.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1508 )
+text = "Email"
+align = 2
+valign = 1
+
+[node name="email_confirm" type="Button" parent="sub_window/account_information/email"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 400.0
+margin_right = 464.0
+margin_bottom = 32.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Confirm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sub_window/account_information/email/email_confirm"]
+anims/fade = SubResource( 4270 )
+
+[node name="password" type="LineEdit" parent="sub_window/account_information"]
+margin_left = 176.0
+margin_top = 240.0
+margin_right = 448.0
+margin_bottom = 272.0
+theme = ExtResource( 31 )
+custom_fonts/font = SubResource( 1507 )
+max_length = 12
+context_menu_enabled = false
+clear_button_enabled = true
+caret_blink = true
+
+[node name="password_label" type="Label" parent="sub_window/account_information/password"]
+margin_left = -88.0
+margin_right = -9.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1508 )
+text = "Password"
+align = 2
+valign = 1
+
+[node name="password_confirm" type="Button" parent="sub_window/account_information/password"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 208.0
+margin_right = 272.0
+margin_bottom = 32.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Confirm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sub_window/account_information/password/password_confirm"]
+anims/fade = SubResource( 4956 )
+
+[node name="question" type="OptionButton" parent="sub_window/account_information"]
+margin_left = 176.0
+margin_top = 376.0
+margin_right = 640.0
+margin_bottom = 408.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 22 )
+text = "Please Select Question"
+items = [ "Please Select Question", null, true, 0, null, "What are the first 3 digits of your SSN?", null, false, 1, null, "What was your fist job?", null, false, 2, null, "What was the brand of your first car?", null, false, 3, null, "What is the name of the city you were born at?", null, false, 4, null, "What is the name of the first school you attended?", null, false, 5, null, "What is the middle name of your father?", null, false, 6, null, "What was the name of your favorite teacher?", null, false, 7, null ]
+selected = 0
+
+[node name="question_label" type="Label" parent="sub_window/account_information/question"]
+margin_left = -88.0
+margin_right = -8.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1508 )
+text = "Question"
+align = 2
+valign = 1
+
+[node name="answer" type="LineEdit" parent="sub_window/account_information"]
+margin_left = 176.0
+margin_top = 432.0
+margin_right = 640.0
+margin_bottom = 464.0
+theme = ExtResource( 31 )
+custom_fonts/font = SubResource( 1507 )
+max_length = 32
+context_menu_enabled = false
+clear_button_enabled = true
+caret_blink = true
+
+[node name="answer_label" type="Label" parent="sub_window/account_information/answer"]
+margin_left = -88.0
+margin_right = -8.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1508 )
+text = "Answer"
+align = 2
+valign = 1
+
+[node name="answer_confirm" type="Button" parent="sub_window/account_information/answer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 400.0
+margin_right = 464.0
+margin_bottom = 32.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Confirm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sub_window/account_information/answer/answer_confirm"]
+anims/fade = SubResource( 5642 )
+
+[node name="description" type="Button" parent="sub_window/account_information"]
+margin_left = 686.0
+margin_top = 572.0
+margin_right = 760.0
+margin_bottom = 592.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_hover = Color( 0, 0.552941, 1, 1 )
+custom_fonts/font = SubResource( 1509 )
+text = "Description"
+flat = true
+
+[node name="restrict_websites" type="Control" parent="sub_window"]
+anchor_top = 0.167
+anchor_bottom = 0.167
+margin_top = -1.20001
+margin_right = 768.0
+margin_bottom = 598.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restrict_websites_label" type="Label" parent="sub_window/restrict_websites"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 148.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1506 )
+text = "Restrict Websites"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="seperator_1" type="ColorRect" parent="sub_window/restrict_websites/restrict_websites_label"]
+margin_left = 56.0
+margin_top = 288.0
+margin_right = 696.0
+margin_bottom = 293.0
+color = Color( 0.262745, 0.262745, 0.262745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fun_education_websites" type="Label" parent="sub_window/restrict_websites/restrict_websites_label/seperator_1"]
+margin_top = 8.0
+margin_right = 168.0
+margin_bottom = 32.0
+text = "Fun Educational Websites:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="browser" type="TextureRect" parent="sub_window/restrict_websites"]
+margin_left = 144.0
+margin_top = 88.0
+margin_right = 242.0
+margin_bottom = 186.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="browser" type="CheckButton" parent="sub_window/restrict_websites/browser"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="encyclopedia" type="TextureRect" parent="sub_window/restrict_websites"]
+margin_left = 272.0
+margin_top = 88.0
+margin_right = 370.0
+margin_bottom = 186.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="encyclopedia" type="CheckButton" parent="sub_window/restrict_websites/encyclopedia"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="typing" type="TextureRect" parent="sub_window/restrict_websites"]
+margin_left = 400.0
+margin_top = 88.0
+margin_right = 498.0
+margin_bottom = 186.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="typing" type="CheckButton" parent="sub_window/restrict_websites/typing"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="khan_academy" type="TextureRect" parent="sub_window/restrict_websites"]
+margin_left = 528.0
+margin_top = 88.0
+margin_right = 626.0
+margin_bottom = 186.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="khan_academy" type="CheckButton" parent="sub_window/restrict_websites/khan_academy"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="national_geographic" type="TextureRect" parent="sub_window/restrict_websites"]
+margin_left = 272.0
+margin_top = 384.0
+margin_right = 370.0
+margin_bottom = 482.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="national_geographic" type="CheckButton" parent="sub_window/restrict_websites/national_geographic"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fun_brain" type="TextureRect" parent="sub_window/restrict_websites"]
+margin_left = 400.0
+margin_top = 384.0
+margin_right = 498.0
+margin_bottom = 482.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fun_brain" type="CheckButton" parent="sub_window/restrict_websites/fun_brain"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Button" parent="sub_window/restrict_websites"]
+margin_left = 686.0
+margin_top = 572.0
+margin_right = 760.0
+margin_bottom = 592.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_hover = Color( 0, 0.552941, 1, 1 )
+custom_fonts/font = SubResource( 1509 )
+text = "Description"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hide_websites" type="Control" parent="sub_window"]
+anchor_top = 0.167
+anchor_bottom = 0.167
+margin_top = 598.8
+margin_right = 768.0
+margin_bottom = 1198.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hide_websites_label" type="Label" parent="sub_window/hide_websites"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 150.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1506 )
+text = "Hide Websites"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="seperator_1" type="ColorRect" parent="sub_window/hide_websites/hide_websites_label"]
+margin_left = 56.0
+margin_top = 288.0
+margin_right = 696.0
+margin_bottom = 293.0
+color = Color( 0.262745, 0.262745, 0.262745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="box" type="TextureRect" parent="sub_window/hide_websites/hide_websites_label"]
+margin_left = 242.0
+margin_top = 344.0
+margin_right = 656.0
+margin_bottom = 540.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="browser" type="TextureRect" parent="sub_window/hide_websites"]
+margin_left = 144.0
+margin_top = 88.0
+margin_right = 242.0
+margin_bottom = 186.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="browser" type="CheckButton" parent="sub_window/hide_websites/browser"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="encyclopedia" type="TextureRect" parent="sub_window/hide_websites"]
+margin_left = 272.0
+margin_top = 88.0
+margin_right = 370.0
+margin_bottom = 186.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="encyclopedia" type="CheckButton" parent="sub_window/hide_websites/encyclopedia"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="typing" type="TextureRect" parent="sub_window/hide_websites"]
+margin_left = 400.0
+margin_top = 88.0
+margin_right = 498.0
+margin_bottom = 186.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="typing" type="CheckButton" parent="sub_window/hide_websites/typing"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="khan_academy" type="TextureRect" parent="sub_window/hide_websites"]
+margin_left = 528.0
+margin_top = 88.0
+margin_right = 626.0
+margin_bottom = 186.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="khan_academy" type="CheckButton" parent="sub_window/hide_websites/khan_academy"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="national_geographic" type="TextureRect" parent="sub_window/hide_websites"]
+margin_left = 400.0
+margin_top = 384.0
+margin_right = 498.0
+margin_bottom = 482.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="national_geographic" type="CheckButton" parent="sub_window/hide_websites/national_geographic"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fun_brain" type="TextureRect" parent="sub_window/hide_websites"]
+margin_left = 528.0
+margin_top = 384.0
+margin_right = 626.0
+margin_bottom = 482.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fun_brain" type="CheckButton" parent="sub_window/hide_websites/fun_brain"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="few_link" type="TextureRect" parent="sub_window/hide_websites"]
+margin_left = 144.0
+margin_top = 384.0
+margin_right = 242.0
+margin_bottom = 482.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="few_link" type="CheckButton" parent="sub_window/hide_websites/few_link"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 92.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.87, 0.9 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Button" parent="sub_window/hide_websites"]
+margin_left = 686.0
+margin_top = 572.0
+margin_right = 760.0
+margin_bottom = 592.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_hover = Color( 0, 0.552941, 1, 1 )
+custom_fonts/font = SubResource( 1509 )
+text = "Description"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="add_websites" type="Control" parent="sub_window"]
+anchor_top = 0.167
+anchor_bottom = 0.167
+margin_top = 1198.8
+margin_right = 768.0
+margin_bottom = 1798.8
+
+[node name="add_websites" type="Label" parent="sub_window/add_websites"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 119.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1506 )
+text = "Add Websites"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Button" parent="sub_window/add_websites"]
+margin_left = 686.0
+margin_top = 572.0
+margin_right = 760.0
+margin_bottom = 592.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_hover = Color( 0, 0.552941, 1, 1 )
+custom_fonts/font = SubResource( 1509 )
+text = "Description"
+flat = true
+
+[node name="add" type="Button" parent="sub_window/add_websites"]
+margin_left = 488.0
+margin_top = 232.0
+margin_right = 568.0
+margin_bottom = 264.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "   Add"
+icon = ExtResource( 26 )
+align = 0
+
+[node name="edit" type="Button" parent="sub_window/add_websites"]
+margin_left = 488.0
+margin_top = 280.0
+margin_right = 568.0
+margin_bottom = 312.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "   Edit"
+icon = ExtResource( 18 )
+align = 0
+
+[node name="delete" type="Button" parent="sub_window/add_websites"]
+margin_left = 488.0
+margin_top = 328.0
+margin_right = 569.0
+margin_bottom = 360.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = " Delete"
+icon = ExtResource( 16 )
+align = 0
+
+[node name="test" type="Button" parent="sub_window/add_websites"]
+margin_left = 488.0
+margin_top = 376.0
+margin_right = 568.0
+margin_bottom = 408.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "  Test"
+icon = ExtResource( 19 )
+align = 0
+
+[node name="added_websites" type="ItemList" parent="sub_window/add_websites"]
+margin_left = 216.0
+margin_top = 128.0
+margin_right = 472.0
+margin_bottom = 512.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 33 )
+
+[node name="add_edit" type="WindowDialog" parent="sub_window/add_websites"]
+anchor_left = 0.089
+anchor_top = 0.32
+anchor_right = 0.094
+anchor_bottom = 0.327
+margin_left = -4.35201
+margin_top = -1.52588e-05
+margin_right = 439.808
+margin_bottom = 227.8
+theme = ExtResource( 32 )
+
+[node name="name" type="LineEdit" parent="sub_window/add_websites/add_edit"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 432.0
+margin_bottom = 64.0
+theme = ExtResource( 21 )
+caret_blink = true
+
+[node name="name" type="Label" parent="sub_window/add_websites/add_edit/name"]
+margin_top = -16.0
+margin_right = 42.0
+margin_bottom = -2.0
+text = "Name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="URL" type="LineEdit" parent="sub_window/add_websites/add_edit"]
+margin_left = 16.0
+margin_top = 104.0
+margin_right = 432.0
+margin_bottom = 128.0
+theme = ExtResource( 21 )
+caret_blink = true
+
+[node name="URL" type="Label" parent="sub_window/add_websites/add_edit/URL"]
+margin_top = -16.0
+margin_right = 29.0
+margin_bottom = -2.0
+text = "URL:"
+
+[node name="save" type="Button" parent="sub_window/add_websites/add_edit"]
+margin_left = 160.0
+margin_top = 184.0
+margin_right = 216.0
+margin_bottom = 216.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Save"
+
+[node name="cancel" type="Button" parent="sub_window/add_websites/add_edit"]
+margin_left = 232.0
+margin_top = 184.0
+margin_right = 288.0
+margin_bottom = 216.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Cancel"
+
+[node name="restrict_access" type="CheckBox" parent="sub_window/add_websites/add_edit"]
+margin_left = 16.0
+margin_top = 144.0
+margin_right = 40.0
+margin_bottom = 168.0
+hint_tooltip = "Require Administrator Permision to open this website."
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="restrict_access" type="Label" parent="sub_window/add_websites/add_edit/restrict_access"]
+margin_left = 24.0
+margin_right = 122.0
+margin_bottom = 24.0
+text = "Restrict Access"
+align = 1
+valign = 1
+
+[node name="transfer_account" type="Control" parent="sub_window"]
+anchor_top = 0.167
+anchor_bottom = 0.167
+margin_top = 1798.8
+margin_right = 768.0
+margin_bottom = 2398.8
+
+[node name="transfer_data" type="Label" parent="sub_window/transfer_account"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 118.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1506 )
+text = "Transfer Account"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="export_label" type="Label" parent="sub_window/transfer_account"]
+margin_left = 64.0
+margin_top = 144.0
+margin_right = 300.0
+margin_bottom = 176.0
+text = "Export Account Data:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="export" type="Button" parent="sub_window/transfer_account/export_label"]
+margin_left = 568.0
+margin_right = 640.0
+margin_bottom = 32.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Export"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="import_label" type="Label" parent="sub_window/transfer_account"]
+margin_left = 64.0
+margin_top = 80.0
+margin_right = 304.0
+margin_bottom = 112.0
+text = "Restore Account Data:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="import" type="Button" parent="sub_window/transfer_account/import_label"]
+margin_left = 568.0
+margin_right = 640.0
+margin_bottom = 32.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Import"
+
+[node name="save_label" type="Label" parent="sub_window/transfer_account"]
+margin_left = 64.0
+margin_top = 208.0
+margin_right = 330.0
+margin_bottom = 240.0
+text = "Save an installer for this software:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="Button" parent="sub_window/transfer_account/save_label"]
+margin_left = 568.0
+margin_right = 640.0
+margin_bottom = 32.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="Button" parent="sub_window/transfer_account"]
+margin_left = 686.0
+margin_top = 572.0
+margin_right = 760.0
+margin_bottom = 592.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_hover = Color( 0, 0.552941, 1, 1 )
+custom_fonts/font = SubResource( 1509 )
+text = "Description"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reset_uninstall" type="Control" parent="sub_window"]
+anchor_top = 0.167
+anchor_bottom = 0.167
+margin_top = 2398.8
+margin_right = 768.0
+margin_bottom = 2998.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reset_uninstall" type="Label" parent="sub_window/reset_uninstall"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 146.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1506 )
+text = "Reset & Uninstall"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reset_label" type="Label" parent="sub_window/reset_uninstall"]
+margin_left = 64.0
+margin_top = 80.0
+margin_right = 241.0
+margin_bottom = 112.0
+text = "Reset ACJA Website Viewer:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reset" type="Button" parent="sub_window/reset_uninstall/reset_label"]
+margin_left = 568.0
+margin_right = 640.0
+margin_bottom = 32.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Reset"
+
+[node name="uninstall_label" type="Label" parent="sub_window/reset_uninstall"]
+margin_left = 64.0
+margin_top = 144.0
+margin_right = 262.0
+margin_bottom = 176.0
+text = "Uninstall ACJA Website Viewer:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="uninstall" type="Button" parent="sub_window/reset_uninstall/uninstall_label"]
+margin_left = 568.0
+margin_right = 640.0
+margin_bottom = 32.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Uninstall"
+
+[node name="description" type="Button" parent="sub_window/reset_uninstall"]
+margin_left = 686.0
+margin_top = 572.0
+margin_right = 760.0
+margin_bottom = 592.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_hover = Color( 0, 0.552941, 1, 1 )
+custom_fonts/font = SubResource( 1509 )
+text = "Description"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about" type="Control" parent="sub_window"]
+anchor_top = 0.167
+anchor_bottom = 0.167
+margin_top = 2998.8
+margin_right = 768.0
+margin_bottom = 3598.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about_label" type="Label" parent="sub_window/about"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 55.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1506 )
+text = "About"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="sub_window/about"]
+margin_left = 80.0
+margin_top = 128.0
+margin_right = 688.0
+margin_bottom = 512.0
+custom_styles/panel = SubResource( 5646 )
+
+[node name="titles" type="RichTextLabel" parent="sub_window/about/Panel"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 304.0
+margin_bottom = 152.0
+text = "Software Version:
+
+Engine Version:
+
+Language:
+
+Developer:
+
+Contact:"
+
+[node name="values" type="RichTextLabel" parent="sub_window/about/Panel"]
+margin_left = 304.0
+margin_top = 16.0
+margin_right = 592.0
+margin_bottom = 232.0
+bbcode_enabled = true
+bbcode_text = "[right]4.22
+
+3.5
+
+GDScript, PowerShell, Python 3.10
+
+Isaac Wolford
+
+asphaleiabrowser@gmail.com
+cybergeek.1943@gmail.com"
+text = "4.22
+
+3.5
+
+GDScript, PowerShell, Python 3.10
+
+Isaac Wolford
+
+asphaleiabrowser@gmail.com
+cybergeek.1943@gmail.com"
+
+[node name="contact_page" type="Button" parent="sub_window/about/Panel"]
+margin_left = 248.0
+margin_top = 336.0
+margin_right = 360.0
+margin_bottom = 368.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 23 )
+text = "Contact Page"
+
+[node name="description" type="Control" parent="sub_window"]
+anchor_top = 0.167
+anchor_bottom = 0.167
+margin_top = 3598.8
+margin_right = 768.0
+margin_bottom = 4198.8
+
+[node name="description_label" type="Label" parent="sub_window/description"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 98.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1506 )
+text = "Description"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description_backround" type="Panel" parent="sub_window/description"]
+margin_left = 80.0
+margin_top = 112.0
+margin_right = 680.0
+margin_bottom = 512.0
+custom_styles/panel = SubResource( 5647 )
+
+[node name="sep" type="Panel" parent="sub_window/description/description_backround"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 592.0
+margin_bottom = 35.0
+custom_styles/panel = SubResource( 5648 )
+
+[node name="text" type="RichTextLabel" parent="sub_window/description/description_backround"]
+margin_left = 16.0
+margin_top = 48.0
+margin_right = 584.0
+margin_bottom = 384.0
+custom_fonts/normal_font = SubResource( 1510 )
+
+[node name="back" type="Button" parent="sub_window/description/description_backround"]
+margin_left = 8.0
+margin_right = 31.0
+margin_bottom = 33.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1511 )
+text = "X"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sub_window"]
+autoplay = "account_information"
+anims/about = SubResource( 1512 )
+anims/account_information = SubResource( 1513 )
+anims/add_websites = SubResource( 2891 )
+anims/description = SubResource( 1514 )
+anims/hide_websites = SubResource( 1515 )
+anims/reset_uninstall = SubResource( 1516 )
+anims/restrict_websites = SubResource( 1517 )
+anims/transfer_account = SubResource( 1518 )
+
+[node name="FileDialog" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -216.0
+margin_right = 320.0
+margin_bottom = 216.0
+theme = ExtResource( 32 )
+access = 2
+filters = PoolStringArray( "*.save" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.0
+margin_top = -51.5
+margin_right = 175.0
+margin_bottom = 51.5
+theme = ExtResource( 32 )
+dialog_text = "Are you sure you want to go back to the home page?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cbar" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 32.0
+script = ExtResource( 1 )
+
+[node name="exit" type="Button" parent="cbar"]
+margin_left = 998.499
+margin_top = 2.58379
+margin_right = 1021.5
+margin_bottom = 27.584
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 1519 )
+text = "X"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="backround/indicator/timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="menu_buttons/account_information" to="." method="_on_account_information_pressed"]
+[connection signal="pressed" from="menu_buttons/restrict_websites" to="." method="_on_restrict_websites_pressed"]
+[connection signal="pressed" from="menu_buttons/hide_websites" to="." method="_on_hide_websites_pressed"]
+[connection signal="pressed" from="menu_buttons/add_websites" to="." method="_on_add_websites_pressed"]
+[connection signal="pressed" from="menu_buttons/transfer_account" to="." method="_on_transfer_account_pressed"]
+[connection signal="pressed" from="menu_buttons/reset_uninstall" to="." method="_on_reset_uninstall_pressed"]
+[connection signal="pressed" from="menu_buttons/about" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="menu_buttons/back" to="." method="_on_back_to_base_pressed"]
+[connection signal="focus_entered" from="sub_window/account_information/name" to="." method="_on_name_focus_entered"]
+[connection signal="focus_exited" from="sub_window/account_information/name" to="." method="_on_name_focus_exited"]
+[connection signal="pressed" from="sub_window/account_information/name/name_confirm" to="." method="_on_name_confirm_pressed"]
+[connection signal="focus_entered" from="sub_window/account_information/email" to="." method="_on_email_focus_entered"]
+[connection signal="focus_exited" from="sub_window/account_information/email" to="." method="_on_email_focus_exited"]
+[connection signal="pressed" from="sub_window/account_information/email/email_confirm" to="." method="_on_email_confirm_pressed"]
+[connection signal="focus_entered" from="sub_window/account_information/password" to="." method="_on_password_focus_entered"]
+[connection signal="focus_exited" from="sub_window/account_information/password" to="." method="_on_password_focus_exited"]
+[connection signal="pressed" from="sub_window/account_information/password/password_confirm" to="." method="_on_pasword_confirm_pressed"]
+[connection signal="item_selected" from="sub_window/account_information/question" to="." method="_on_question_item_selected"]
+[connection signal="ready" from="sub_window/account_information/question" to="." method="_on_question_ready"]
+[connection signal="focus_entered" from="sub_window/account_information/answer" to="." method="_on_answer_focus_entered"]
+[connection signal="focus_exited" from="sub_window/account_information/answer" to="." method="_on_answer_focus_exited"]
+[connection signal="pressed" from="sub_window/account_information/answer/answer_confirm" to="." method="_on_answer_confirm_pressed"]
+[connection signal="pressed" from="sub_window/account_information/description" to="." method="_on_description_1_pressed"]
+[connection signal="toggled" from="sub_window/restrict_websites/browser/browser" to="." method="_on_browser_toggled"]
+[connection signal="toggled" from="sub_window/restrict_websites/encyclopedia/encyclopedia" to="." method="_on_encyclopedia_toggled"]
+[connection signal="toggled" from="sub_window/restrict_websites/typing/typing" to="." method="_on_typing_toggled"]
+[connection signal="toggled" from="sub_window/restrict_websites/khan_academy/khan_academy" to="." method="_on_khan_academy_toggled"]
+[connection signal="toggled" from="sub_window/restrict_websites/national_geographic/national_geographic" to="." method="_on_national_geographic_toggled"]
+[connection signal="toggled" from="sub_window/restrict_websites/fun_brain/fun_brain" to="." method="_on_fun_brain_toggled"]
+[connection signal="pressed" from="sub_window/restrict_websites/description" to="." method="_on_description_2_pressed"]
+[connection signal="toggled" from="sub_window/hide_websites/browser/browser" to="." method="_on_d_browser_toggled"]
+[connection signal="toggled" from="sub_window/hide_websites/encyclopedia/encyclopedia" to="." method="_on_d_encyclopedia_toggled"]
+[connection signal="toggled" from="sub_window/hide_websites/typing/typing" to="." method="_on_d_typing_toggled"]
+[connection signal="toggled" from="sub_window/hide_websites/khan_academy/khan_academy" to="." method="_on_d_khan_academy_toggled"]
+[connection signal="toggled" from="sub_window/hide_websites/national_geographic/national_geographic" to="." method="_on_d_national_geographic_toggled"]
+[connection signal="toggled" from="sub_window/hide_websites/fun_brain/fun_brain" to="." method="_on_d_fun_brain_toggled"]
+[connection signal="toggled" from="sub_window/hide_websites/few_link/few_link" to="." method="_on_few_link_toggled"]
+[connection signal="pressed" from="sub_window/hide_websites/description" to="." method="_on_description_3_pressed"]
+[connection signal="pressed" from="sub_window/add_websites/description" to="." method="_on_description_4_pressed"]
+[connection signal="pressed" from="sub_window/add_websites/add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="sub_window/add_websites/edit" to="." method="_on_edit_added_websites_pressed"]
+[connection signal="pressed" from="sub_window/add_websites/delete" to="." method="_on_remove_added_website_pressed"]
+[connection signal="pressed" from="sub_window/add_websites/test" to="." method="_on_test_added_website_pressed"]
+[connection signal="item_activated" from="sub_window/add_websites/added_websites" to="." method="_on_added_websites_item_activated"]
+[connection signal="nothing_selected" from="sub_window/add_websites/added_websites" to="." method="_on_added_websites_nothing_selected"]
+[connection signal="ready" from="sub_window/add_websites/added_websites" to="." method="_on_added_websites_ready"]
+[connection signal="pressed" from="sub_window/add_websites/add_edit/save" to="." method="_on_added_websites_add_edit_SAVE_pressed"]
+[connection signal="pressed" from="sub_window/add_websites/add_edit/cancel" to="." method="_on_added_websites_add_edit_cancel_pressed"]
+[connection signal="pressed" from="sub_window/transfer_account/export_label/export" to="." method="_on_export_settings_pressed"]
+[connection signal="pressed" from="sub_window/transfer_account/import_label/import" to="." method="_on_import_settings_pressed"]
+[connection signal="pressed" from="sub_window/transfer_account/save_label/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="sub_window/transfer_account/description" to="." method="_on_description_5_pressed"]
+[connection signal="pressed" from="sub_window/reset_uninstall/reset_label/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="sub_window/reset_uninstall/uninstall_label/uninstall" to="." method="_on_uninstall_pressed"]
+[connection signal="pressed" from="sub_window/reset_uninstall/description" to="." method="_on_description_6_pressed"]
+[connection signal="pressed" from="sub_window/about/Panel/contact_page" to="." method="_on_contact_page_pressed"]
+[connection signal="pressed" from="sub_window/description/description_backround/back" to="." method="_on_back_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
+[connection signal="gui_input" from="cbar" to="cbar" method="_on_cbar_gui_input"]
+[connection signal="pressed" from="cbar/exit" to="." method="_on_exit_pressed"]

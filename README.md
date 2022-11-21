@@ -7,7 +7,7 @@ Note - the core functionality of this really only works on Windows OS since it u
 
 &emsp;
 
-ACJA Website Viewer acts as a portal that opens up websites in kiosk mode so that the user does not have access to the URL bar or any other buttons. This was a small project I developed for a small local private school nearby.
+Asphaleia Browser acts as a portal that opens up websites in kiosk mode so that the user does not have access to the URL bar or any other buttons. This was a small project I developed for a small local private school nearby.
 
 This project is also sort of a showcase as to the kind of GUI/UX that can be made in an engine like Godot. It was a fun project to work on.
 
@@ -20,4 +20,4 @@ This project is also sort of a showcase as to the kind of GUI/UX that can be mad
 - [Alternate Navigation Buttons](https://chrome.google.com/webstore/detail/alternate-navigation-butt/biojkleepjmhindklmdcomngjkcngjmb/related?hl=en-US) - (chrome extension that adds simple navigation buttons to go forward or backward.)
 - You may also want to disable many keyboard shortcuts such as ctr+shift+esc, ctrl+n, win+r, or ctrl+alt+esc... as well as remove access to browsers from the start menu. 
 
-There are may shortcomings of this program when it is run all by itself. In the future ACJA Website Viewer may be made kiosk itself and much more "kiosk" secure.
+There are may shortcomings of this program when it is run all by itself. In the future Asphaleia Browser may be made kiosk itself and much more "kiosk" secure.

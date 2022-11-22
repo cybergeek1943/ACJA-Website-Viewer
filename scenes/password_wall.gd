@@ -26,6 +26,12 @@ func _ready():
 	$backround/title/AnimationPlayer.play("title")
 
 # buttons
+func _on_hide_password_pressed():
+	if $password.secret:
+		$password.secret = false
+	else:
+		$password.secret = true
+
 func _on_cancel_pressed():
 	Global.change_scene("res://scenes/base.tscn")
 

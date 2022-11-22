@@ -10,6 +10,17 @@ func indicator(message: String, color: Color = Color(1, 0, 0)):
 	yield(get_tree().create_timer(2), "timeout")
 	$backround/indicator.text = ''
 
+var hidden_password: bool = true
+func _on_hide_password_pressed():
+	if hidden_password:
+		$text_entry_1.secret = false
+		$text_entry_2.secret = false
+		hidden_password = false
+	else:
+		$text_entry_1.secret = true
+		$text_entry_2.secret = true
+		hidden_password = true
+
 func _on_done_pressed():
 	var te1 = $text_entry_1.text
 	var te2 = $text_entry_2.text

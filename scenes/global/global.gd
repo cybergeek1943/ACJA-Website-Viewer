@@ -1,9 +1,9 @@
 extends Node  # maybe use SceneTree in autoload scripts later
 # sleep(t: float): yield(get_tree().create_timer(<time>), "timeout")
 
-var program_google_account: String = 'asphaleiabrowser@gmail.com'
-var program_google_account_app_password: String = 'lfyznwdnvdsxzuxz'  # App Passwords revoked by google after master password change
-var program_id: String = 'OL@N6O@$KT67f3JIW5z&'  # use this for encryption of user data and hash functions (for dev bypass OTP). Note this must be the same as the dev bypass generator program_id for bypass to work.
+var program_google_account: String = 'gmail-account'  # this is the gmail account that the program uses for contact and OTP emails.
+var program_google_account_app_password: String = 'google-app-password'  # App Passwords revoked by google after master password change
+var program_id: String = 'd9*38WBBcUIyO$j3T6n@'  # use this for encryption of user data and hash functions (for dev bypass OTP). Note this must be the same as the dev bypass generator program_id for bypass to work.
 
 
 # lower level functions

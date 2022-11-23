@@ -228,20 +228,20 @@ text = "Send"
 margin_left = 1336.0
 margin_top = 56.0
 margin_right = 1736.0
-margin_bottom = 176.0
+margin_bottom = 192.0
 custom_styles/panel = SubResource( 10 )
 
 [node name="label" type="RichTextLabel" parent="pages/successful"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 392.0
-margin_bottom = 112.0
+margin_bottom = 128.0
 theme = ExtResource( 9 )
 custom_colors/default_color = Color( 1, 1, 1, 0.627451 )
 custom_fonts/normal_font = SubResource( 13 )
-text = "Thank you for contacting us! It may take a few days for you to receive a response. In the meantime feel free to continue using (if possible) this program as you normaly would.
+text = "Thank you for contacting us! It may take a few days for you to receive a response. In the meantime, feel free to continue using (if possible) this software as you usually would.
 
-Note - If you are not connected to the internet the message was not successfully submitted"
+Note: The message cannot be processed if you are not connected to the internet."
 
 [node name="done" type="Button" parent="pages/successful"]
 margin_left = 624.0

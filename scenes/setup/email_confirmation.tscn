@@ -133,6 +133,7 @@ margin_left = 944.0
 margin_top = 552.0
 margin_right = 1008.0
 margin_bottom = 584.0
+focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource( 6 )
 text = "Next"

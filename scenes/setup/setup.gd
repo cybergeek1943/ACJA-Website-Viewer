@@ -1,11 +1,16 @@
 extends Control
 
 
+func _ready():
+	indicator('Security code successful', Color(0, 1, 0))
+
+
 func indicator(message: String, color: Color = Color(1, 0, 0)):
 	$backround/indicator.add_color_override("font_color", color)
 	$backround/indicator.text = message
 	yield(get_tree().create_timer(2), "timeout")
 	$backround/indicator.text = ''
+
 
 # main:
 func _on_icon_animation_finished(anim_name):

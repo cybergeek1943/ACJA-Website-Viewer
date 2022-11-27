@@ -1,10 +1,6 @@
 extends Control
 
 
-func _ready():
-	indicator('Security code successful', Color(0, 1, 0))
-
-
 func indicator(message: String, color: Color = Color(1, 0, 0)):
 	$backround/indicator.add_color_override("font_color", color)
 	$backround/indicator.text = message
@@ -80,6 +76,9 @@ func _on_hide_password_pressed():
 		$text_entry_1.secret = true
 		$text_entry_2.secret = true
 		hidden_password = true
+
+func _on_password_scene_ready():
+	indicator('Security code successful', Color(0, 1, 0))
 
 
 func _on_question_answer_next_pressed():

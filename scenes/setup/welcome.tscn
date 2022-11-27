@@ -89,7 +89,7 @@ custom_styles/panel = SubResource( 5 )
 [node name="sep" type="Panel" parent="notice"]
 margin_left = 8.0
 margin_top = 23.0
-margin_right = 356.0
+margin_right = 376.0
 margin_bottom = 26.0
 custom_styles/panel = SubResource( 6 )
 

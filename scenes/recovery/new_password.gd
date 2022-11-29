@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	indicator('Security code successful', Color(0, 1, 0))
+	indicator('Email Confirmation Successful', Color(0, 1, 0))
 	$text_entry_1.grab_focus()
 
 func indicator(message: String, color: Color = Color(1, 0, 0)):

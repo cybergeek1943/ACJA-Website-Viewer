@@ -10,10 +10,10 @@ Password Recovery: Is used for recovering the password if it gets lost or forgot
 var rw: String = """Restricting a website makes it so that the password is required to open it. It does not entirely remove a website but only requires administrator permission to open it.
 
 
-To completely hide websites from the home page go to (Hide Websites)."""
+To completely remove websites from the home page go to (Remove Websites)."""
 
 
-var hw: String = """Hiding websites completely hide them from the home page.
+var hw: String = """Removing websites completely removes/hides them from the home page.
 
 
 To only restrict access to websites by requiring a password go to (Restrict Websites)."""

@@ -16,7 +16,10 @@ func _on_cancel_pressed():
 	Global.change_scene(Global.get_previous_scene())
 
 func _on_welcome_next_pressed():
-	Global.change_scene('res://scenes/setup/name_email.tscn', true)
+	if $notice/read_confirmed.pressed:
+		Global.change_scene('res://scenes/setup/name_email.tscn', true)
+	else:
+		$notice/read_confirmed/AnimationPlayer.play("read_confirmed")
 
 func _on_name_email_next_pressed():
 	var te1 = $text_entry_1.text
@@ -78,7 +81,7 @@ func _on_hide_password_pressed():
 		hidden_password = true
 
 func _on_password_scene_ready():
-	indicator('Security code successful', Color(0, 1, 0))
+	indicator('Email Confirmation Successful', Color(0, 1, 0))
 
 
 func _on_question_answer_next_pressed():

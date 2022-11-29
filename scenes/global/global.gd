@@ -111,7 +111,7 @@ var null_user_data: Dictionary = {
 		"national_geographic":false,
 		"fun_brain":false
 	},
-	"hw":{
+	"hw":{  # hide/remove = mean the same thing here
 		"browser":false,
 		"encyclopedia":false,
 		"typing":false,

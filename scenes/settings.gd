@@ -61,13 +61,13 @@ func _ready():
 	$sub_window/restrict_websites/national_geographic/national_geographic.pressed = Global.user_data['rw']['national_geographic']
 	$sub_window/restrict_websites/fun_brain/fun_brain.pressed = Global.user_data['rw']['fun_brain']
 	# hide websites
-	$sub_window/hide_websites/browser/browser.pressed = Global.user_data['hw']['browser']
-	$sub_window/hide_websites/encyclopedia/encyclopedia.pressed = Global.user_data['hw']['encyclopedia']
-	$sub_window/hide_websites/khan_academy/khan_academy.pressed = Global.user_data['hw']['khan_academy']
-	$sub_window/hide_websites/typing/typing.pressed = Global.user_data['hw']['typing']
-	$sub_window/hide_websites/few_link/few_link.pressed = Global.user_data['hw']['fun_educational_websites']
-	$sub_window/hide_websites/national_geographic/national_geographic.pressed = Global.user_data['hw']['national_geographic']
-	$sub_window/hide_websites/fun_brain/fun_brain.pressed = Global.user_data['hw']['fun_brain']
+	$sub_window/remove_websites/browser/browser.pressed = Global.user_data['hw']['browser']
+	$sub_window/remove_websites/encyclopedia/encyclopedia.pressed = Global.user_data['hw']['encyclopedia']
+	$sub_window/remove_websites/khan_academy/khan_academy.pressed = Global.user_data['hw']['khan_academy']
+	$sub_window/remove_websites/typing/typing.pressed = Global.user_data['hw']['typing']
+	$sub_window/remove_websites/few_link/few_link.pressed = Global.user_data['hw']['fun_educational_websites']
+	$sub_window/remove_websites/national_geographic/national_geographic.pressed = Global.user_data['hw']['national_geographic']
+	$sub_window/remove_websites/fun_brain/fun_brain.pressed = Global.user_data['hw']['fun_brain']
 	
 	# for the "focus" of each side menu button. this starts on `account` hence the index is 0.
 	_emulate_focus_button(0)
@@ -83,7 +83,7 @@ func _on_back_to_base_pressed():
 
 # menu buttons
 func _emulate_focus_button(index: int): # make this so that a real <focus> is used on its own layer when 4.0 comes out!
-	var buttons: Array = ['account_information', 'restrict_websites', 'hide_websites', 'add_websites', 'transfer_account',  'reset_uninstall', 'about']
+	var buttons: Array = ['account_information', 'restrict_websites', 'remove_websites', 'add_websites', 'transfer_account',  'reset_uninstall', 'about']
 	var i: int = 0
 	for b in buttons:
 		if i == index:
@@ -104,10 +104,10 @@ func _on_restrict_websites_pressed():
 	$menu_buttons/button_indicator/AnimationPlayer.play('restrict_websites')
 	$sub_window/AnimationPlayer.play('restrict_websites')
 
-func _on_hide_websites_pressed():
+func _on_remove_websites_pressed():
 	_emulate_focus_button(2)
-	$menu_buttons/button_indicator/AnimationPlayer.play('hide_websites')
-	$sub_window/AnimationPlayer.play('hide_websites')
+	$menu_buttons/button_indicator/AnimationPlayer.play('remove_websites')
+	$sub_window/AnimationPlayer.play('remove_websites')
 
 func _on_add_websites_pressed():
 	_emulate_focus_button(3)
@@ -133,18 +133,7 @@ func _on_about_pressed():
 # sub_window: description
 var description_back_mode: String = 'null'
 func _on_back_pressed():
-	if description_back_mode == 'account_information':
-		$sub_window/AnimationPlayer.play('account_information')
-	elif description_back_mode == 'restrict_websites':
-		$sub_window/AnimationPlayer.play('restrict_websites')
-	elif description_back_mode == 'hide_websites':
-		$sub_window/AnimationPlayer.play('hide_websites')
-	elif description_back_mode == 'add_websites':
-		$sub_window/AnimationPlayer.play('add_websites')
-	elif description_back_mode == 'transfer_account':
-		$sub_window/AnimationPlayer.play('transfer_account')
-	elif description_back_mode == 'reset_uninstall':
-		$sub_window/AnimationPlayer.play('reset_uninstall')
+	$sub_window/AnimationPlayer.play(description_back_mode)
 
 func _on_description_1_pressed():
 	$sub_window/AnimationPlayer.play('description')
@@ -160,9 +149,9 @@ func _on_description_2_pressed():
 
 func _on_description_3_pressed():
 	$sub_window/AnimationPlayer.play('description')
-	$sub_window/description/description_label.text = 'Hide Websites  >  Description'
+	$sub_window/description/description_label.text = 'Remove Websites  >  Description'
 	$sub_window/description/description_backround/text.text = Description.hw
-	description_back_mode = 'hide_websites'
+	description_back_mode = 'remove_websites'
 
 func _on_description_4_pressed():
 	$sub_window/AnimationPlayer.play('description')
@@ -327,25 +316,25 @@ func _on_d_typing_toggled(button_pressed):
 # fun educational websites
 func _on_few_link_toggled(button_pressed):
 	if button_pressed:
-		$sub_window/hide_websites/national_geographic/national_geographic.disabled = true
-		$sub_window/hide_websites/fun_brain/fun_brain.disabled = true
+		$sub_window/remove_websites/national_geographic/national_geographic.disabled = true
+		$sub_window/remove_websites/fun_brain/fun_brain.disabled = true
 	else:
-		$sub_window/hide_websites/national_geographic/national_geographic.disabled = false
-		$sub_window/hide_websites/fun_brain/fun_brain.disabled = false
-	$sub_window/hide_websites/national_geographic/national_geographic.pressed = button_pressed
-	$sub_window/hide_websites/fun_brain/fun_brain.pressed = button_pressed
+		$sub_window/remove_websites/national_geographic/national_geographic.disabled = false
+		$sub_window/remove_websites/fun_brain/fun_brain.disabled = false
+	$sub_window/remove_websites/national_geographic/national_geographic.pressed = button_pressed
+	$sub_window/remove_websites/fun_brain/fun_brain.pressed = button_pressed
 	Global.user_data['hw']['fun_educational_websites'] = button_pressed
 
 # national geographic
 func _on_d_national_geographic_toggled(button_pressed):
-	if button_pressed and $sub_window/hide_websites/fun_brain/fun_brain.pressed:
-		$sub_window/hide_websites/few_link/few_link.pressed = true
+	if button_pressed and $sub_window/remove_websites/fun_brain/fun_brain.pressed:
+		$sub_window/remove_websites/few_link/few_link.pressed = true
 	Global.user_data['hw']['national_geographic'] = button_pressed
 
 # fun brain
 func _on_d_fun_brain_toggled(button_pressed):
-	if button_pressed and $sub_window/hide_websites/national_geographic/national_geographic.pressed:
-		$sub_window/hide_websites/few_link/few_link.pressed = true
+	if button_pressed and $sub_window/remove_websites/national_geographic/national_geographic.pressed:
+		$sub_window/remove_websites/few_link/few_link.pressed = true
 	Global.user_data['hw']['fun_brain'] = button_pressed
 
 
@@ -356,12 +345,18 @@ func _on_d_fun_brain_toggled(button_pressed):
 # 	sub-window: added websites
 # restarts program for changes to take effect
 func _on_added_websites_ready():
+	$sub_window/add_websites/added_websites.clear()  # preps for refresh
 	# the reason this is not in the main _ready() func is because it is called in a below func after an item is edited or added.
 	var index: int = 0
 	for website in Global.user_data['added']:
 		$sub_window/add_websites/added_websites.add_item(website['name'])
 		$sub_window/add_websites/added_websites.set_item_tooltip(index, website['url'])
 		index += 1
+	
+	if index == 0:
+		$sub_window/add_websites/added_websites/empty_notice.show()
+	else:
+		$sub_window/add_websites/added_websites/empty_notice.hide()
 
 
 func get_selected_website():
@@ -395,6 +390,28 @@ func _on_add_pressed():
 	$sub_window/add_websites/add_edit/name.grab_focus()
 	$sub_window/add_websites/added_websites.unselect_all()
 
+func _on_added_websites_add_edit_SAVE_pressed():
+	var name: String = $sub_window/add_websites/add_edit/name.text
+	var url: String = $sub_window/add_websites/add_edit/URL.text
+	var rw: bool = $sub_window/add_websites/add_edit/restrict_access.pressed
+	if len(name) < 2 or len(url) < 5:
+		$sub_window/add_websites/add_edit.theme.set_color('title_color', 'WindowDialog', Color(1, 0, 0))
+		$sub_window/add_websites/add_edit.window_title = 'Please enter a name and valid url'
+		yield(get_tree().create_timer(INDICATOR_DISPLAY_TIME), "timeout")  # sleep()
+		$sub_window/add_websites/add_edit.theme.set_color('title_color', 'WindowDialog', Color(1, 1, 1))
+		$sub_window/add_websites/add_edit.window_title = 'Add'
+		# indicator('Please enter a name and valid url', RED_COLOR)
+		return
+	
+	if added_websites_operations == 'add':
+		Global.user_data['added'].append({'name': name.capitalize(), 'url': url, 'rw': rw})
+	elif added_websites_operations == 'edit':
+		var selected_item: int = get_selected_website()
+		Global.user_data['added'][selected_item] = {'name': name.capitalize(), 'url': url, 'rw': rw}
+	
+	$sub_window/add_websites/add_edit.hide()
+	_on_added_websites_ready()
+
 
 func _on_edit_added_websites_pressed():
 	var selected_item = get_selected_website()
@@ -415,31 +432,7 @@ func _on_remove_added_website_pressed():
 		indicator('A website must be selected in order to delete it', RED_COLOR)
 		return
 	Global.user_data['added'].remove(selected_item)
-	$sub_window/add_websites/added_websites.remove_item(selected_item)
-
-
-func _on_added_websites_add_edit_SAVE_pressed():
-	var name: String = $sub_window/add_websites/add_edit/name.text
-	var url: String = $sub_window/add_websites/add_edit/URL.text
-	var rw: bool = $sub_window/add_websites/add_edit/restrict_access.pressed
-	if len(name) < 2 or len(url) < 5:
-		$sub_window/add_websites/add_edit.theme.set_color('title_color', 'WindowDialog', Color(1, 0, 0))
-		$sub_window/add_websites/add_edit.window_title = 'Please enter a name and valid url'
-		yield(get_tree().create_timer(INDICATOR_DISPLAY_TIME), "timeout")  # sleep()
-		$sub_window/add_websites/add_edit.theme.set_color('title_color', 'WindowDialog', Color(1, 1, 1))
-		$sub_window/add_websites/add_edit.window_title = 'Add'
-		# indicator('Please enter a name and valid url', RED_COLOR)
-		return
-	
-	if added_websites_operations == 'add':
-		Global.user_data['added'].append({'name': name.capitalize(), 'url': url, 'rw': rw})
-	elif added_websites_operations == 'edit':
-		var selected_item: int = get_selected_website()
-		Global.user_data['added'][selected_item] = {'name': name.capitalize(), 'url': url, 'rw': rw}
-	
-	$sub_window/add_websites/added_websites.clear()
 	_on_added_websites_ready()
-	$sub_window/add_websites/add_edit.hide()
 
 
 func _on_added_websites_add_edit_cancel_pressed():

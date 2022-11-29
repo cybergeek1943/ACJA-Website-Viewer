@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ui/fonts/seguihis.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ui/icons/application_icon.png" type="Texture" id=2]
@@ -31,6 +31,29 @@ corner_radius_bottom_left = 1
 size = 12
 use_filter = true
 font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 13
+use_filter = true
+extra_spacing_bottom = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "read_confirmed"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 256 ), Vector2( 112, 256 ), Vector2( 120, 256 ), Vector2( 128, 256 ), Vector2( 120, 256 ), Vector2( 112, 256 ), Vector2( 120, 256 ) ]
+}
 
 [sub_resource type="DynamicFont" id=4]
 size = 11
@@ -86,6 +109,14 @@ margin_right = 704.0
 margin_bottom = 512.0
 custom_styles/panel = SubResource( 5 )
 
+[node name="Label" type="Label" parent="notice"]
+margin_left = 168.0
+margin_right = 216.0
+margin_bottom = 22.0
+text = "Notice"
+align = 1
+valign = 1
+
 [node name="sep" type="Panel" parent="notice"]
 margin_left = 8.0
 margin_top = 23.0
@@ -99,17 +130,25 @@ margin_top = 32.0
 margin_right = 376.0
 margin_bottom = 243.0
 custom_fonts/normal_font = SubResource( 2 )
-text = "A local account will need to created to start using Asphaleia Browser. The account is NOT for the students... it is only for the teacher/administrator. Once the account has been made, it can be saved to a file and transferred to other computers if necessary. Asphaleia Browser acts as a web portal, meaning it directs the user to the websites that have been curated and open's them up in a kiosk window.
+text = "A local account will need to be created to start using Asphaleia Browser. The account is NOT for the students... it is only for the teacher/administrator. Once the account has been made, it can be saved to a file and transferred to other computers.
+Asphaleia Browser acts as a web portal, meaning it directs the user to the websites that have been curated and open's them up in a kiosk window.
 If, at some point, the websites that Asphaleia Browser has links to; break down or become no longer maintained, the problem is not related to this software. The developer can be contacted via (settings > about/contact) if a website breaks down, the Chrome browser/ad blockers stop working, or an update to Asphaleia Browser is necessary.
-Notice - No internet filter is perfect. It is possible to get onto non-curated websites once a curated website is opened in the browser through hyperlinks. It might be possible to repair this problem by blacklisting \\ whitelisting the websites you want."
+Notice - No internet filter is perfect. It is hard possible to get onto non-curated websites once a curated website is opened in the browser through hyperlinks. It might be possible to repair this problem by blacklisting \\ whitelisting the websites you want."
 
-[node name="Label" type="Label" parent="notice"]
-margin_left = 168.0
-margin_right = 216.0
-margin_bottom = 22.0
-text = "Notice"
-align = 1
-valign = 1
+[node name="read_confirmed" type="CheckBox" parent="notice"]
+margin_left = 120.0
+margin_top = 256.0
+margin_right = 281.0
+margin_bottom = 285.0
+focus_mode = 0
+custom_colors/font_color_hover_pressed = Color( 0.0784314, 0.694118, 1, 1 )
+custom_colors/font_color = Color( 1, 0.447059, 0.447059, 1 )
+custom_colors/font_color_hover = Color( 1, 0.678431, 0.678431, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "I have read the notice"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="notice/read_confirmed"]
+anims/read_confirmed = SubResource( 8 )
 
 [node name="next" type="Button" parent="."]
 margin_left = 944.0

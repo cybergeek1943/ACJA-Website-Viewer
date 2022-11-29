@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://scenes/cbar.gd" type="Script" id=1]
 [ext_resource path="res://ui/fonts/Arial.ttf" type="DynamicFontData" id=2]
@@ -148,7 +148,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=1501]
-resource_name = "hide_websites"
+resource_name = "remove_websites"
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -395,6 +395,23 @@ size = 12
 use_filter = true
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxFlat" id=5651]
+bg_color = Color( 0.172549, 0.164706, 0.196078, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.172549, 0.164706, 0.196078, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="DynamicFont" id=5652]
+size = 13
+use_filter = true
+font_data = ExtResource( 2 )
+
 [sub_resource type="StyleBoxFlat" id=5646]
 bg_color = Color( 0.113725, 0.113725, 0.113725, 1 )
 corner_radius_top_left = 16
@@ -527,7 +544,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=1515]
-resource_name = "hide_websites"
+resource_name = "remove_websites"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -710,25 +727,24 @@ margin_left = 8.0
 margin_top = 36.0
 margin_right = 248.0
 margin_bottom = 68.0
+hint_tooltip = "Require permission to open certain websites"
 focus_mode = 0
 theme = ExtResource( 24 )
 text = " Restrict Websites"
 icon = ExtResource( 27 )
 align = 0
 
-[node name="hide_websites" type="Button" parent="menu_buttons"]
+[node name="remove_websites" type="Button" parent="menu_buttons"]
 margin_left = 8.0
 margin_top = 72.0
 margin_right = 248.0
 margin_bottom = 104.0
+hint_tooltip = "Completely remove access to certain websites"
 focus_mode = 0
 theme = ExtResource( 24 )
-text = " Hide Websites"
+text = " Remove Websites"
 icon = ExtResource( 13 )
 align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="add_websites" type="Button" parent="menu_buttons"]
 margin_left = 8.0
@@ -736,6 +752,7 @@ margin_top = 108.0
 margin_right = 248.0
 margin_bottom = 140.0
 rect_pivot_offset = Vector2( 0, -296 )
+hint_tooltip = "Add new websites \\ Edit existing added websites"
 focus_mode = 0
 theme = ExtResource( 24 )
 text = " Add Websites"
@@ -748,6 +765,7 @@ margin_top = 144.0
 margin_right = 248.0
 margin_bottom = 176.0
 rect_pivot_offset = Vector2( 0, -296 )
+hint_tooltip = "Transfer account & settings to another computer"
 focus_mode = 0
 theme = ExtResource( 24 )
 text = " Transfer Account"
@@ -759,6 +777,7 @@ margin_left = 8.0
 margin_top = 180.0
 margin_right = 248.0
 margin_bottom = 212.0
+hint_tooltip = "Reset or Uninstall Asphaleia Browser"
 focus_mode = 0
 theme = ExtResource( 24 )
 text = " Reset & Uninstall"
@@ -806,7 +825,7 @@ autoplay = "account_information"
 anims/about = SubResource( 1499 )
 anims/account_information = SubResource( 1500 )
 anims/add_websites = SubResource( 2205 )
-anims/hide_websites = SubResource( 1501 )
+anims/remove_websites = SubResource( 1501 )
 anims/reset_uninstall = SubResource( 1503 )
 anims/restrict_websites = SubResource( 1504 )
 anims/transfer_account = SubResource( 1505 )
@@ -1058,21 +1077,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="seperator_1" type="ColorRect" parent="sub_window/restrict_websites/restrict_websites_label"]
+[node name="seperator" type="Panel" parent="sub_window/restrict_websites/restrict_websites_label"]
 margin_left = 56.0
 margin_top = 288.0
 margin_right = 696.0
 margin_bottom = 293.0
-color = Color( 0.262745, 0.262745, 0.262745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_styles/panel = SubResource( 5645 )
 
-[node name="fun_education_websites" type="Label" parent="sub_window/restrict_websites/restrict_websites_label/seperator_1"]
+[node name="fun_education_websites" type="Label" parent="sub_window/restrict_websites/restrict_websites_label/seperator"]
+margin_left = 8.0
 margin_top = 8.0
-margin_right = 168.0
+margin_right = 176.0
 margin_bottom = 32.0
-text = "Fun Educational Websites:"
+custom_colors/font_color = Color( 1, 1, 1, 0.705882 )
+text = "Fun Educational Websites"
 align = 1
 valign = 1
 __meta__ = {
@@ -1235,38 +1253,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="hide_websites" type="Control" parent="sub_window"]
+[node name="remove_websites" type="Control" parent="sub_window"]
 anchor_top = 0.167
 anchor_bottom = 0.167
 margin_top = 598.8
 margin_right = 768.0
 margin_bottom = 1198.8
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="hide_websites_label" type="Label" parent="sub_window/hide_websites"]
+[node name="title" type="Label" parent="sub_window/remove_websites"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 150.0
+margin_right = 128.0
 margin_bottom = 29.0
 custom_fonts/font = SubResource( 1506 )
-text = "Hide Websites"
+text = "Remove Websites"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="seperator_1" type="ColorRect" parent="sub_window/hide_websites/hide_websites_label"]
+[node name="seperator" type="Panel" parent="sub_window/remove_websites/title"]
 margin_left = 56.0
 margin_top = 288.0
 margin_right = 696.0
 margin_bottom = 293.0
-color = Color( 0.262745, 0.262745, 0.262745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_styles/panel = SubResource( 5645 )
 
-[node name="box" type="TextureRect" parent="sub_window/hide_websites/hide_websites_label"]
+[node name="box" type="TextureRect" parent="sub_window/remove_websites/title"]
 margin_left = 242.0
 margin_top = 344.0
 margin_right = 656.0
@@ -1276,7 +1288,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="browser" type="TextureRect" parent="sub_window/hide_websites"]
+[node name="browser" type="TextureRect" parent="sub_window/remove_websites"]
 margin_left = 144.0
 margin_top = 88.0
 margin_right = 242.0
@@ -1285,7 +1297,7 @@ texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
 
-[node name="browser" type="CheckButton" parent="sub_window/hide_websites/browser"]
+[node name="browser" type="CheckButton" parent="sub_window/remove_websites/browser"]
 margin_left = 16.0
 margin_top = 104.0
 margin_right = 92.0
@@ -1297,7 +1309,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="encyclopedia" type="TextureRect" parent="sub_window/hide_websites"]
+[node name="encyclopedia" type="TextureRect" parent="sub_window/remove_websites"]
 margin_left = 272.0
 margin_top = 88.0
 margin_right = 370.0
@@ -1309,7 +1321,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="encyclopedia" type="CheckButton" parent="sub_window/hide_websites/encyclopedia"]
+[node name="encyclopedia" type="CheckButton" parent="sub_window/remove_websites/encyclopedia"]
 margin_left = 16.0
 margin_top = 104.0
 margin_right = 92.0
@@ -1321,7 +1333,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="typing" type="TextureRect" parent="sub_window/hide_websites"]
+[node name="typing" type="TextureRect" parent="sub_window/remove_websites"]
 margin_left = 400.0
 margin_top = 88.0
 margin_right = 498.0
@@ -1333,7 +1345,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="typing" type="CheckButton" parent="sub_window/hide_websites/typing"]
+[node name="typing" type="CheckButton" parent="sub_window/remove_websites/typing"]
 margin_left = 16.0
 margin_top = 104.0
 margin_right = 92.0
@@ -1345,7 +1357,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="khan_academy" type="TextureRect" parent="sub_window/hide_websites"]
+[node name="khan_academy" type="TextureRect" parent="sub_window/remove_websites"]
 margin_left = 528.0
 margin_top = 88.0
 margin_right = 626.0
@@ -1357,7 +1369,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="khan_academy" type="CheckButton" parent="sub_window/hide_websites/khan_academy"]
+[node name="khan_academy" type="CheckButton" parent="sub_window/remove_websites/khan_academy"]
 margin_left = 16.0
 margin_top = 104.0
 margin_right = 92.0
@@ -1369,7 +1381,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="national_geographic" type="TextureRect" parent="sub_window/hide_websites"]
+[node name="national_geographic" type="TextureRect" parent="sub_window/remove_websites"]
 margin_left = 400.0
 margin_top = 384.0
 margin_right = 498.0
@@ -1381,7 +1393,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="national_geographic" type="CheckButton" parent="sub_window/hide_websites/national_geographic"]
+[node name="national_geographic" type="CheckButton" parent="sub_window/remove_websites/national_geographic"]
 margin_left = 16.0
 margin_top = 104.0
 margin_right = 92.0
@@ -1393,7 +1405,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fun_brain" type="TextureRect" parent="sub_window/hide_websites"]
+[node name="fun_brain" type="TextureRect" parent="sub_window/remove_websites"]
 margin_left = 528.0
 margin_top = 384.0
 margin_right = 626.0
@@ -1405,7 +1417,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fun_brain" type="CheckButton" parent="sub_window/hide_websites/fun_brain"]
+[node name="fun_brain" type="CheckButton" parent="sub_window/remove_websites/fun_brain"]
 margin_left = 16.0
 margin_top = 104.0
 margin_right = 92.0
@@ -1417,7 +1429,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="few_link" type="TextureRect" parent="sub_window/hide_websites"]
+[node name="few_link" type="TextureRect" parent="sub_window/remove_websites"]
 margin_left = 144.0
 margin_top = 384.0
 margin_right = 242.0
@@ -1429,7 +1441,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="few_link" type="CheckButton" parent="sub_window/hide_websites/few_link"]
+[node name="few_link" type="CheckButton" parent="sub_window/remove_websites/few_link"]
 margin_left = 16.0
 margin_top = 104.0
 margin_right = 92.0
@@ -1441,7 +1453,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="description" type="Button" parent="sub_window/hide_websites"]
+[node name="description" type="Button" parent="sub_window/remove_websites"]
 margin_left = 686.0
 margin_top = 572.0
 margin_right = 760.0
@@ -1463,7 +1475,7 @@ margin_top = 1198.8
 margin_right = 768.0
 margin_bottom = 1798.8
 
-[node name="add_websites" type="Label" parent="sub_window/add_websites"]
+[node name="title" type="Label" parent="sub_window/add_websites"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 119.0
@@ -1474,17 +1486,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="description" type="Button" parent="sub_window/add_websites"]
-margin_left = 686.0
-margin_top = 572.0
-margin_right = 760.0
-margin_bottom = 592.0
+[node name="sub-title" type="Label" parent="sub_window/add_websites/title"]
+margin_left = 208.0
+margin_top = 96.0
+margin_right = 464.0
+margin_bottom = 120.0
+text = "Added Websites"
+align = 1
+valign = 1
+
+[node name="added_websites" type="ItemList" parent="sub_window/add_websites"]
+margin_left = 216.0
+margin_top = 128.0
+margin_right = 472.0
+margin_bottom = 512.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_colors/font_color_hover = Color( 0, 0.552941, 1, 1 )
-custom_fonts/font = SubResource( 1509 )
-text = "Description"
-flat = true
+theme = ExtResource( 33 )
+custom_styles/bg = SubResource( 5651 )
+
+[node name="empty_notice" type="Label" parent="sub_window/add_websites/added_websites"]
+visible = false
+margin_left = 56.0
+margin_top = 168.0
+margin_right = 200.0
+margin_bottom = 216.0
+custom_colors/font_color = Color( 1, 0.376471, 0.376471, 1 )
+custom_fonts/font = SubResource( 5652 )
+text = "No websites have been added here yet!"
+align = 1
+valign = 1
+autowrap = true
 
 [node name="add" type="Button" parent="sub_window/add_websites"]
 margin_left = 488.0
@@ -1534,15 +1566,6 @@ text = "  Test"
 icon = ExtResource( 19 )
 align = 0
 
-[node name="added_websites" type="ItemList" parent="sub_window/add_websites"]
-margin_left = 216.0
-margin_top = 128.0
-margin_right = 472.0
-margin_bottom = 512.0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource( 33 )
-
 [node name="add_edit" type="WindowDialog" parent="sub_window/add_websites"]
 anchor_left = 0.089
 anchor_top = 0.32
@@ -1560,6 +1583,7 @@ margin_top = 40.0
 margin_right = 432.0
 margin_bottom = 64.0
 theme = ExtResource( 21 )
+max_length = 80
 caret_blink = true
 
 [node name="name" type="Label" parent="sub_window/add_websites/add_edit/name"]
@@ -1577,6 +1601,7 @@ margin_top = 104.0
 margin_right = 432.0
 margin_bottom = 128.0
 theme = ExtResource( 21 )
+max_length = 256
 caret_blink = true
 
 [node name="URL" type="Label" parent="sub_window/add_websites/add_edit/URL"]
@@ -1622,6 +1647,18 @@ text = "Restrict Access"
 align = 1
 valign = 1
 
+[node name="description" type="Button" parent="sub_window/add_websites"]
+margin_left = 686.0
+margin_top = 572.0
+margin_right = 760.0
+margin_bottom = 592.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_hover = Color( 0, 0.552941, 1, 1 )
+custom_fonts/font = SubResource( 1509 )
+text = "Description"
+flat = true
+
 [node name="transfer_account" type="Control" parent="sub_window"]
 anchor_top = 0.167
 anchor_bottom = 0.167
@@ -1645,7 +1682,7 @@ margin_left = 64.0
 margin_top = 144.0
 margin_right = 300.0
 margin_bottom = 176.0
-text = "Export Account Data:"
+text = "Export Account"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1668,7 +1705,7 @@ margin_left = 64.0
 margin_top = 80.0
 margin_right = 304.0
 margin_bottom = 112.0
-text = "Restore Account Data:"
+text = "Restore Account"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1688,7 +1725,7 @@ margin_left = 64.0
 margin_top = 208.0
 margin_right = 330.0
 margin_bottom = 240.0
-text = "Save an installer for this software:"
+text = "Save an installer for this software"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1747,12 +1784,9 @@ margin_left = 64.0
 margin_top = 80.0
 margin_right = 241.0
 margin_bottom = 112.0
-text = "Reset ACJA Website Viewer:"
+text = "Reset Asphaleia Browser"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="reset" type="Button" parent="sub_window/reset_uninstall/reset_label"]
 margin_left = 568.0
@@ -1768,7 +1802,7 @@ margin_left = 64.0
 margin_top = 144.0
 margin_right = 262.0
 margin_bottom = 176.0
-text = "Uninstall ACJA Website Viewer:"
+text = "Uninstall Asphaleia Browser"
 align = 1
 valign = 1
 __meta__ = {
@@ -1936,7 +1970,7 @@ anims/about = SubResource( 1512 )
 anims/account_information = SubResource( 1513 )
 anims/add_websites = SubResource( 2891 )
 anims/description = SubResource( 1514 )
-anims/hide_websites = SubResource( 1515 )
+anims/remove_websites = SubResource( 1515 )
 anims/reset_uninstall = SubResource( 1516 )
 anims/restrict_websites = SubResource( 1517 )
 anims/transfer_account = SubResource( 1518 )
@@ -1995,7 +2029,7 @@ __meta__ = {
 [connection signal="timeout" from="backround/indicator/timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="menu_buttons/account_information" to="." method="_on_account_information_pressed"]
 [connection signal="pressed" from="menu_buttons/restrict_websites" to="." method="_on_restrict_websites_pressed"]
-[connection signal="pressed" from="menu_buttons/hide_websites" to="." method="_on_hide_websites_pressed"]
+[connection signal="pressed" from="menu_buttons/remove_websites" to="." method="_on_remove_websites_pressed"]
 [connection signal="pressed" from="menu_buttons/add_websites" to="." method="_on_add_websites_pressed"]
 [connection signal="pressed" from="menu_buttons/transfer_account" to="." method="_on_transfer_account_pressed"]
 [connection signal="pressed" from="menu_buttons/reset_uninstall" to="." method="_on_reset_uninstall_pressed"]
@@ -2023,24 +2057,24 @@ __meta__ = {
 [connection signal="toggled" from="sub_window/restrict_websites/national_geographic/national_geographic" to="." method="_on_national_geographic_toggled"]
 [connection signal="toggled" from="sub_window/restrict_websites/fun_brain/fun_brain" to="." method="_on_fun_brain_toggled"]
 [connection signal="pressed" from="sub_window/restrict_websites/description" to="." method="_on_description_2_pressed"]
-[connection signal="toggled" from="sub_window/hide_websites/browser/browser" to="." method="_on_d_browser_toggled"]
-[connection signal="toggled" from="sub_window/hide_websites/encyclopedia/encyclopedia" to="." method="_on_d_encyclopedia_toggled"]
-[connection signal="toggled" from="sub_window/hide_websites/typing/typing" to="." method="_on_d_typing_toggled"]
-[connection signal="toggled" from="sub_window/hide_websites/khan_academy/khan_academy" to="." method="_on_d_khan_academy_toggled"]
-[connection signal="toggled" from="sub_window/hide_websites/national_geographic/national_geographic" to="." method="_on_d_national_geographic_toggled"]
-[connection signal="toggled" from="sub_window/hide_websites/fun_brain/fun_brain" to="." method="_on_d_fun_brain_toggled"]
-[connection signal="toggled" from="sub_window/hide_websites/few_link/few_link" to="." method="_on_few_link_toggled"]
-[connection signal="pressed" from="sub_window/hide_websites/description" to="." method="_on_description_3_pressed"]
-[connection signal="pressed" from="sub_window/add_websites/description" to="." method="_on_description_4_pressed"]
+[connection signal="toggled" from="sub_window/remove_websites/browser/browser" to="." method="_on_d_browser_toggled"]
+[connection signal="toggled" from="sub_window/remove_websites/encyclopedia/encyclopedia" to="." method="_on_d_encyclopedia_toggled"]
+[connection signal="toggled" from="sub_window/remove_websites/typing/typing" to="." method="_on_d_typing_toggled"]
+[connection signal="toggled" from="sub_window/remove_websites/khan_academy/khan_academy" to="." method="_on_d_khan_academy_toggled"]
+[connection signal="toggled" from="sub_window/remove_websites/national_geographic/national_geographic" to="." method="_on_d_national_geographic_toggled"]
+[connection signal="toggled" from="sub_window/remove_websites/fun_brain/fun_brain" to="." method="_on_d_fun_brain_toggled"]
+[connection signal="toggled" from="sub_window/remove_websites/few_link/few_link" to="." method="_on_few_link_toggled"]
+[connection signal="pressed" from="sub_window/remove_websites/description" to="." method="_on_description_3_pressed"]
+[connection signal="item_activated" from="sub_window/add_websites/added_websites" to="." method="_on_added_websites_item_activated"]
+[connection signal="nothing_selected" from="sub_window/add_websites/added_websites" to="." method="_on_added_websites_nothing_selected"]
+[connection signal="ready" from="sub_window/add_websites/added_websites" to="." method="_on_added_websites_ready"]
 [connection signal="pressed" from="sub_window/add_websites/add" to="." method="_on_add_pressed"]
 [connection signal="pressed" from="sub_window/add_websites/edit" to="." method="_on_edit_added_websites_pressed"]
 [connection signal="pressed" from="sub_window/add_websites/delete" to="." method="_on_remove_added_website_pressed"]
 [connection signal="pressed" from="sub_window/add_websites/test" to="." method="_on_test_added_website_pressed"]
-[connection signal="item_activated" from="sub_window/add_websites/added_websites" to="." method="_on_added_websites_item_activated"]
-[connection signal="nothing_selected" from="sub_window/add_websites/added_websites" to="." method="_on_added_websites_nothing_selected"]
-[connection signal="ready" from="sub_window/add_websites/added_websites" to="." method="_on_added_websites_ready"]
 [connection signal="pressed" from="sub_window/add_websites/add_edit/save" to="." method="_on_added_websites_add_edit_SAVE_pressed"]
 [connection signal="pressed" from="sub_window/add_websites/add_edit/cancel" to="." method="_on_added_websites_add_edit_cancel_pressed"]
+[connection signal="pressed" from="sub_window/add_websites/description" to="." method="_on_description_4_pressed"]
 [connection signal="pressed" from="sub_window/transfer_account/export_label/export" to="." method="_on_export_settings_pressed"]
 [connection signal="pressed" from="sub_window/transfer_account/import_label/import" to="." method="_on_import_settings_pressed"]
 [connection signal="pressed" from="sub_window/transfer_account/save_label/save" to="." method="_on_save_pressed"]

@@ -337,12 +337,12 @@ color = Color( 0.176471, 0.176471, 0.176471, 1 )
 
 [node name="welcome_label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 240.0
+margin_left = 184.0
 margin_top = -32.0
-margin_right = 784.0
+margin_right = 840.0
 margin_bottom = 43.0
 custom_fonts/font = SubResource( 10 )
-text = "WELCOME TO ASPHALEIA BROWSER"
+text = "WELCOME TO ASPHALEIA BROWSER INTRO"
 align = 1
 valign = 1
 autowrap = true

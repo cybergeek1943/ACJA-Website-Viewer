@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/edit.png-cb6e60cc133850127930573af8af069d.stex"
+path="res://.import/add.png-ba81bbaf1872041896337d4af00753d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/icons/buttons/settings/add/edit.png"
-dest_files=[ "res://.import/edit.png-cb6e60cc133850127930573af8af069d.stex" ]
+source_file="res://ui/icons/buttons/settings/websites/add.png"
+dest_files=[ "res://.import/add.png-ba81bbaf1872041896337d4af00753d7.stex" ]
 
 [params]
 

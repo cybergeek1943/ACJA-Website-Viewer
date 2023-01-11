@@ -4,6 +4,9 @@ extends Control
 var following = false
 var dragging_start_position = Vector2()
 
+func _ready():
+	OS.center_window()
+
 func _on_cbar_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.get_button_index() == 1:

@@ -13,7 +13,7 @@ var rw: String = """Restricting a website makes it so that the password is requi
 To completely remove websites from the home page go to (Remove Websites)."""
 
 
-var hw: String = """Removing websites completely removes/hides them from the home page.
+var hw: String = """Removing\\Disabling websites completely removes them from the home page.
 
 
 To only restrict access to websites by requiring a password go to (Restrict Websites)."""

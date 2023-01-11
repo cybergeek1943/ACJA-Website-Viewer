@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test.png-039b00ee7ec4864dc72d9c0d1ab0e813.stex"
+path="res://.import/lock.png-52332b2947c7248d54d3fff72a1f4e34.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/icons/buttons/settings/add/test.png"
-dest_files=[ "res://.import/test.png-039b00ee7ec4864dc72d9c0d1ab0e813.stex" ]
+source_file="res://ui/icons/buttons/settings/websites/lock.png"
+dest_files=[ "res://.import/lock.png-52332b2947c7248d54d3fff72a1f4e34.stex" ]
 
 [params]
 
@@ -27,9 +27,9 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
-process/invert_color=true
+process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

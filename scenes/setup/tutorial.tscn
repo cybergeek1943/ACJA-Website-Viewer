@@ -463,7 +463,7 @@ margin_left = -40.0
 margin_top = 40.0
 margin_right = 120.0
 margin_bottom = 139.0
-text = "If you do not want the user to have access to a specific default or added website you can simply go to settings and disable/hide it."
+text = "If you do not want the user to have access to a specific default or added website you can simply go to settings and remove/disable it."
 align = 1
 autowrap = true
 

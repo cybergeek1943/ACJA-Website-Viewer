@@ -46,7 +46,7 @@ var otp: String = otp_gen()
 func otp_gen(length: int = 6) -> String:  # generates random pin that is used to unlock password
 	randomize()  # reseeds
 	var out: String = ""
-	for i in range(length):
+	for _i in range(length):
 		out += str(randi() % 10)  # modulo 10 to get 6 digit pin
 	# print(out)  # for testing only
 	return out

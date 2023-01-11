@@ -1,26 +1,20 @@
 extends Control
 
 
-var last_restricted_button_pressed = Global.last_restricted_button_pressed
+var last_restricted_website_pressed = Global.last_restricted_website_pressed
 
 
 # initializes window
 func _ready():
 	$password.grab_focus()
 	
-	if typeof(last_restricted_button_pressed) == TYPE_STRING:
-		if last_restricted_button_pressed == "google":
-			$link_title.text = "Google Chrome"
-		elif last_restricted_button_pressed == "settings":
-			$link_title.text = "Settings"
-		else:
-			$link_title.text = "Permision Required"
-		get_node(last_restricted_button_pressed + "/AnimationPlayer").play("link_icon")
-		$link_title/AnimationPlayer.play("link_title")
+	if last_restricted_website_pressed['name'] in ['settings', 'google', 'browser', 'encyclopedia', 'khan_academy', 'typing', 'national_geographic', 'fun_brain']:  # list of default icons
+		get_node(last_restricted_website_pressed['name'] + "/AnimationPlayer").play("link_icon")
+		$link_title.text = 'Permision Required'
+	else:
+		$added/AnimationPlayer.play("link_icon")
+		$link_title.text = last_restricted_website_pressed['name'].replace('_', ' ').capitalize()
 	
-	elif typeof(last_restricted_button_pressed) == TYPE_INT:  # if index for added website
-		$link_title.text = Global.user_data["added"][last_restricted_button_pressed]["name"]
-		$logo/AnimationPlayer.play("link_icon")
 	
 	$link_title/AnimationPlayer.play("link_title")
 	$backround/title/AnimationPlayer.play("title")
@@ -37,17 +31,13 @@ func _on_cancel_pressed():
 
 func _on_continue_pressed():
 	if Global.is_password($password.text):
-		if typeof(last_restricted_button_pressed) == TYPE_STRING:
-			if last_restricted_button_pressed == "settings":
-				Global.change_scene("res://scenes/settings.tscn")
-			elif last_restricted_button_pressed == "google":
-				Website.open_chrome()
-				Global.change_scene("res://scenes/base.tscn")
-			else:
-				Website.run(last_restricted_button_pressed)
-				Global.change_scene("res://scenes/base.tscn")
-		elif typeof(last_restricted_button_pressed) == TYPE_INT:
-			Website.run_added_website(last_restricted_button_pressed)
+		if last_restricted_website_pressed['name'] == "settings":
+			Global.change_scene("res://scenes/settings.tscn")
+		elif last_restricted_website_pressed['name'] == "google":
+			Website.open_chrome()
+			Global.change_scene("res://scenes/base.tscn")
+		else:
+			Website.open_url(last_restricted_website_pressed['url'])
 			Global.change_scene("res://scenes/base.tscn")
 	else:
 		$password_incorrect/AnimationPlayer.play("password_incorrect")

@@ -1,12 +1,17 @@
 extends Node  # maybe use SceneTree in autoload scripts later
 # sleep(t: float): yield(get_tree().create_timer(<time>), "timeout")
 
-var program_google_account: String = 'gmail-account'  # this is the gmail account that the program uses for contact and OTP emails.
-var program_google_account_app_password: String = 'google-app-password'  # App Passwords revoked by google after master password change
-var program_id: String = 'd9*38WBBcUIyO$j3T6n@'  # use this for encryption of user data and hash functions (for dev bypass OTP). Note this must be the same as the dev bypass generator program_id for bypass to work.
+var program_google_account: String = 'asphaleiabrowser@gmail.com'
+var program_google_account_app_password: String = 'lfyznwdnvdsxzuxz'  # App Passwords revoked by google after master password change
+var program_id: String = '25pS&s@tm!YgOSTDDIop'  # use this for encryption of user data and hash functions (for dev bypass OTP). Note this must be the same as the dev bypass generator program_id for bypass to work.
 
 
 # lower level functions
+var lower_alphabet = 'abcdefghijklmnopqrstuvwxyz'
+var upper_alphabet = lower_alphabet.to_upper()
+var lower_alphabet_numbers = 'abcdefghijklmnopqrstuvwxyz0123456789'
+var upper_alphabet_numbers = lower_alphabet.to_upper() + '0123456789'
+
 func save_to_file(path: String, data: String):
 	var file = File.new()
 	file.open_encrypted_with_pass(path, File.WRITE, program_id)
@@ -27,10 +32,18 @@ func file_exist(path: String):
 
 
 # functions:
-func strip(value, strip_chars: String):
+func strip(string, strip_chars: String):
 	var out: String = ''
-	for i in value:
+	for i in string:
 		if not i in strip_chars:
+			out += i 
+	return out
+
+func exclusive_strip(string, keep_chars: String):
+	"""The returned string will only contain chars that are in <keep_chars>"""
+	var out: String = ''
+	for i in string:
+		if i in keep_chars:
 			out += i 
 	return out
 
@@ -101,39 +114,41 @@ var null_user_data: Dictionary = {
 		"question":"",
 		"answer":"",
 		"exists":false,
-		"year":Time.get_date_dict_from_system()['year']  # this is just here as a placeholder. this gets reassigned later in setup.
+		"year":Time.get_date_dict_from_system()['year']  # this is here just as a placeholder. this gets reassigned later in setup.
 	},
-	"rw":{
-		"browser":false,
-		"encyclopedia":false,
-		"typing":false,
-		"khan_academy":false,
-		"national_geographic":false,
-		"fun_brain":false
-	},
-	"hw":{  # hide/remove = mean the same thing here
-		"browser":false,
-		"encyclopedia":false,
-		"typing":false,
-		"khan_academy":false,
-		"fun_educational_websites":false,
-		"national_geographic":false,
-		"fun_brain":false
-	},
-	"added":[]  # format - [{"name": "", "url": "", "rw": false}, {"name": "", "url": "", "rw": false}...]
+	"restricted":[],  # name keys are added here. this acts as a blacklist so that a password is required to open them
+	"sites":[
+			{"name": "browser", "url": "https://kiddle.co/", "icon":'browser', "disabled":false},
+			{"name": "encyclopedia", "url": "https://kids.kiddle.co/", "icon":"encyclopedia", "disabled":false},
+			{"name": "khan_academy", "url": "https://www.khanacademy.org/", "icon":"khan_academy", "disabled":false},
+			{"name": "typing", "url": "https://typing.com", "icon":"typing", "disabled":false},
+			{"name": "additional_websites", "url": "--action addtional-websites", "icon":"additional_websites", "disabled":false},
+			
+			# under added category
+			{"name": "national_geographic", "url": "https://kids.nationalgeographic.com/search-results/", "icon":"national_geographic", "disabled":false},
+			{"name": "fun_brain", "url": "https://funbrain.com/", "icon":"fun_brain", "disabled":false},
+			]  # name: contains name of website, url: contains url or action to be opened/completed, icon: says gives the key to access icon path - it could also be used to check if a website is default, disabled: says wether the default site should not be rendered - disabled key should only be set to true when default key is true
 }
+
 
 var user_data: Dictionary = null_user_data.duplicate(true)
 var user_data_path: String = 'user://user_data.save'  # when developing: 'res://user_data.save'
+var default_icons: Dictionary = {'generic':'res://ui/icons/buttons/base/generic.png',
+								'added':'res://ui/icons/buttons/base/added.png',
+								'browser':'res://ui/icons/buttons/base/browser.png',
+								'encyclopedia':'res://ui/icons/buttons/base/encyclopedia.png',
+								'khan_academy':'res://ui/icons/buttons/base/khan_academy.png',
+								'typing':'res://ui/icons/buttons/base/typing.png',
+								'additional_websites':'res://ui/icons/buttons/base/additional_websites.png',
+								'national_geographic':'res://ui/icons/buttons/base/national_geographic.png',
+								'fun_brain':'res://ui/icons/buttons/base/fun_brain.png'}
 
-var last_restricted_button_pressed = "settings"  # can be a button name or an int index of an added website. placeholder is 'settings'
+var last_restricted_website_pressed = {'name': 'settings', 'url': ''}  # can be a button name or an int index of an added website. placeholder is 'settings'
 
 
 # init
 # when update in future make sure to retest this code
 func _ready():
-	OS.center_window()
-
 	if file_exist(user_data_path):
 		var json_data = JSON.parse(load_file(user_data_path)).result
 		if json_data != null:  # if file could be parsed into json
@@ -146,6 +161,4 @@ func _ready():
 		_ready()
 	
 	# add data here while programming to change user_data:
-	# user_data['added'] = [{"name": "youtube", "url": "www.youtube.com", "rw": false}, {"name": "google", "url": "www.google.com", "rw": false}]
-	# user_data['acc']['year'] = Time.get_date_dict_from_system()['year'] - 1
 	# save_changes()

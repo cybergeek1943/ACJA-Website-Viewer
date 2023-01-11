@@ -46,3 +46,10 @@ func _on_back_pressed():
 
 func _on_forgot_password_pressed():
 	Global.change_scene("res://scenes/recovery/recover_password.tscn", true)
+
+
+func _on_hide_password_pressed():
+	if $pages/password/password.secret:
+		$pages/password/password.secret = false
+	else:
+		$pages/password/password.secret = true

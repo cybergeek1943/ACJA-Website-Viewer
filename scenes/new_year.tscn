@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/cbar.gd" type="Script" id=1]
 [ext_resource path="res://ui/fonts/seguihis.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://ui/themes/text_entry_border.tres" type="Theme" id=5]
 [ext_resource path="res://ui/themes/default_button.tres" type="Theme" id=6]
 [ext_resource path="res://ui/icons/application_icon.png" type="Texture" id=7]
+[ext_resource path="res://ui/icons/buttons/hide_password.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=14]
 tracks/0/type = "bezier"
@@ -228,7 +229,7 @@ theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 22 )
 max_length = 12
 secret = true
-secret_character = "O"
+secret_character = "●"
 context_menu_enabled = false
 clear_button_enabled = true
 selecting_enabled = false
@@ -236,6 +237,17 @@ placeholder_text = "Password"
 placeholder_alpha = 0.2
 caret_blink = true
 caret_blink_speed = 0.5
+
+[node name="hide_password" type="TextureButton" parent="pages/password"]
+margin_left = 328.0
+margin_top = 112.0
+margin_right = 360.0
+margin_bottom = 144.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 3
 
 [node name="indicator" type="Label" parent="pages"]
 margin_left = 1352.0
@@ -308,6 +320,7 @@ flat = true
 
 [connection signal="pressed" from="pages/choice/renew" to="." method="_on_renew_pressed"]
 [connection signal="pressed" from="pages/choice/new" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="pages/password/hide_password" to="." method="_on_hide_password_pressed"]
 [connection signal="pressed" from="pages/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="pages/forgot_password" to="." method="_on_forgot_password_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

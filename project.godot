@@ -20,7 +20,7 @@ run/low_processor_mode=true
 run/low_processor_mode_sleep_usec=500
 boot_splash/image="res://ui/graphics/boot.png"
 boot_splash/fullsize=false
-config/icon="res://ui/icons/application_icon.png"
+config/icon="res://ui/icons/buttons/base/generic.png"
 config/windows_native_icon="res://ui/icons/application_icon.ico"
 
 [autoload]
@@ -28,7 +28,7 @@ config/windows_native_icon="res://ui/icons/application_icon.ico"
 Global="*res://scenes/global/global.gd"
 Website="*res://scenes/global/website.gd"
 Email="*res://scenes/global/email.gd"
-InternetConnection="*res://scenes/internet_connection_checker.gd"
+InternetConnection="*res://scenes/global/internet_connection_checker.gd"
 Description="*res://scenes/global/descriptions.gd"
 
 [display]

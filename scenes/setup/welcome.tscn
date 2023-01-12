@@ -133,7 +133,7 @@ custom_fonts/normal_font = SubResource( 2 )
 text = "A local account will need to be created to start using Asphaleia Browser. The account is NOT for the students... it is only for the teacher/administrator. Once the account has been made, it can be saved to a file and transferred to other computers.
 Asphaleia Browser acts as a web portal, meaning it directs the user to the websites that have been curated and open's them up in a kiosk window.
 If, at some point, the websites that Asphaleia Browser has links to; break down or become no longer maintained, the problem is not related to this software. The developer can be contacted via (settings > about/contact) if a website breaks down, the Chrome browser/ad blockers stop working, or an update to Asphaleia Browser is necessary.
-Notice - No internet filter is perfect. It is hard possible to get onto non-curated websites once a curated website is opened in the browser through hyperlinks. It might be possible to repair this problem by blacklisting \\ whitelisting the websites you want."
+Notice - No internet filter is perfect. It is hard but possible to get onto non-curated websites once a curated website is opened in the browser through hyperlinks. It might be possible to repair this problem by blacklisting \\ whitelisting the websites you want."
 
 [node name="read_confirmed" type="CheckBox" parent="notice"]
 margin_left = 120.0

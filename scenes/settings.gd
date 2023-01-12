@@ -37,7 +37,7 @@ func _on_ConfirmationDialog_confirmed():
 		Global.change_scene("res://scenes/base.tscn")
 	elif confirm_action == 'import':
 		$FileDialog.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
-		$FileDialog.current_file = 'acja_web_viewer_account_data.save'
+		$FileDialog.current_file = 'Asphaleia Browser Account Data.save'
 		$FileDialog.mode = FileDialog.MODE_OPEN_FILE
 		$FileDialog.window_title = 'Import Account Data'
 		$FileDialog.popup_centered()
@@ -576,7 +576,7 @@ func _on_import_settings_pressed():
 func _on_export_settings_pressed():
 	filedialogmode = 'export'
 	$FileDialog.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
-	$FileDialog.current_file = 'acja_web_viewer_account_data'
+	$FileDialog.current_file = 'Asphaleia Browser Account Data'
 	$FileDialog.mode = FileDialog.MODE_SAVE_FILE
 	$FileDialog.window_title = 'Export Account Data'
 	$FileDialog.popup_centered()
@@ -591,7 +591,7 @@ func _on_reset_pressed():
 	confirmation_diolog('Reseting the settings will erase all current settings and reinitiate setup!', 'reset')
 
 func _on_uninstall_pressed():
-	'Uninstalling ACJA Website Viewer will completely remove it from this computer!'
+	'Uninstalling Asphaleia Browser will completely remove it from this computer!'
 	confirmation_diolog('The unistaller feature will come in future versions of this software.', 'uninstall')
 
 

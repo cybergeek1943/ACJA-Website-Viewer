@@ -120,7 +120,7 @@ func _on_FileDialog_file_selected(path):
 
 func _on_restore_backup_pressed():
 	$FileDialog.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
-	$FileDialog.current_file = 'acja_web_viewer_account_data.save'
+	$FileDialog.current_file = 'Asphaleia Website Account Data.save'
 	$FileDialog.window_title = 'Import Account Data'
 	$FileDialog.popup_centered()
 

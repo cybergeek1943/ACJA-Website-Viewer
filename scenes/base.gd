@@ -112,6 +112,8 @@ func go_left():
 
 # page change buttons
 func manage_page_change_buttons():
+	var __total_page_num = ceil(float(len(Global.user_data['sites']))/5) - 1
+
 	# when to show button/s - first page
 	if __current_page_num == 1 and __total_page_num == 1:
 		$left_page/show.play("show")
@@ -139,7 +141,6 @@ func manage_page_change_buttons():
 		$open_quick_view/AnimationPlayer.play("show")
 
 
-var __total_page_num = ceil(float(len(Global.user_data['sites']))/5) - 1
 var __current_page_num = 0
 var __previous_page_num = 0
 var __buttons_activated: bool = true  # TODO work on ativating the buttons

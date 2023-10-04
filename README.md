@@ -1,4 +1,4 @@
-# Asphaliea Browser
+# Asphaleia Browser
 ![GitHub Workflow Status](https://raw.githubusercontent.com/cybergeek1943/badges/main/build-passing.svg)
 
 To download the executable [click here](https://github.com/cybergeek1943/Asphaleia-Browser/releases/download/v4.23/Asphaleia-Browser.exe).
